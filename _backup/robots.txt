@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /e.php
+Disallow: /provozovatel.php
+Disallow: /law.php
+Disallow: /cookies.php
+Disallow: /privacy.php
