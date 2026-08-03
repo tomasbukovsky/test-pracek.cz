@@ -75,13 +75,12 @@ echo $content['ga'];
                                         </ul>
                                         </body>
                                         </html>";
-
                     echo "<div class='ok-message'>Kód byl úspěšně odeslán.</div><script type='text/javascript'>_gaq.push(['_trackEvent', 'Registrace e-mailu', 'ok', '']);</script>";
                     mail($insert_email, "Sleva v e-shopu", $mail_text, "From: info@aaa-katalog.cz\nMIME-Version: 1.0\nContent-Type: text/html; charset=utf-8\nContent-Transfer-Encoding: 8bit");
                     mail("info@aaa-katalog.cz", "Slevovy kod z webu ".$_SERVER['HTTP_HOST']." ", "E-mail: ".$insert_email."\n", "From: info@aaa-katalog.cz\nMIME-Version: 1.0\nContent-Type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit");
 
                     include './MailChimp.php';
-                    $MailChimp = new \Drewm\MailChimp('6da6f4d23adc70c40c8c67082d5341ee-us8');
+                    $MailChimp = new \Drewm\MailChimp('');
                     $result = $MailChimp->call('lists/subscribe', array(
                         'id'                => 'd73fdc00c5',
                         'email'             => array('email'=>$insert_email),

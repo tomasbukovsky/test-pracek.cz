@@ -1,0 +1,46 @@
+<?php
+/**
+ * Srovnávací tabulka produktů.
+ * Očekává $produkty_pole = array produktů.
+ */
+?>
+<div class="table-wrap" role="region" aria-label="Srovnávací tabulka praček" tabindex="0">
+<table class="product-table">
+  <thead>
+    <tr>
+      <th scope="col" class="col-sticky">Model</th>
+      <th scope="col">Kapacita</th>
+      <th scope="col">Otáčky</th>
+      <th scope="col">En. třída</th>
+      <th scope="col">Hlučnost</th>
+      <th scope="col">Orient. cena</th>
+      <th scope="col">Koupit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($produkty_pole as $p): ?>
+    <tr>
+      <td class="col-sticky">
+        <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
+      </td>
+      <td><?= (int)$p['kapacita'] ?> kg</td>
+      <td><?= (int)$p['otacky'] ?> ot./min</td>
+      <td><?= htmlspecialchars($p['energ_trida'], ENT_QUOTES, 'UTF-8') ?></td>
+      <td><?= (int)$p['hlucnost_odstred'] ?> dB</td>
+      <td>
+        <?php if ($p['cena_orient']): ?>
+          <?= number_format((int)$p['cena_orient'], 0, ',', ' ') ?> Kč
+          <small class="cena-datum">(k <?= htmlspecialchars($p['cena_datum'], ENT_QUOTES, 'UTF-8') ?>)</small>
+        <?php else: ?>
+          —
+        <?php endif; ?>
+      </td>
+      <td>
+        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--sm">Alza</a>
+      </td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+</div>
+<p class="table-note"><small>Ceny jsou orientační k datu uvedenému v tabulce. Aktuální ceny zjistíte u prodejce. Obsahuje <a href="/affiliate-informace/">affiliate odkazy</a>.</small></p>

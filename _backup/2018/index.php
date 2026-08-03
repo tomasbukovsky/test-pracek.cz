@@ -160,7 +160,7 @@ endwhile;
                     shali_subscribe($insert_email, $domain);
 
                     /*                include '../MailChimp.php';
-                                    $MailChimp = new \Drewm\MailChimp('6da6f4d23adc70c40c8c67082d5341ee-us8');
+                                    $MailChimp = new \Drewm\MailChimp('');
                                     $result = $MailChimp->call('lists/subscribe', array(
                                         'id'                => $mailchimplist_id,
                                         'email'             => array('email'=>$insert_email),
