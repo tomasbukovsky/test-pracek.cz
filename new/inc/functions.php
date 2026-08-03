@@ -19,12 +19,15 @@ function produkty(): array {
 
 /** Filtruje produkty podle segmentu */
 function produkty_v_segmentu(string $segment): array {
-    return array_filter(produkty(), fn($p) => in_array($segment, $p['segmenty'] ?? []));
+    return array_filter(produkty(), function ($p) use ($segment) {
+        return in_array($segment, isset($p['segmenty']) ? $p['segmenty'] : []);
+    });
 }
 
-/** Vrátí jeden produkt podle slugu */
-function produkt(string $slug): ?array {
-    return produkty()[$slug] ?? null;
+/** Vrátí jeden produkt podle slugu (nebo null, pokud neexistuje) */
+function produkt(string $slug) {
+    $vsechny = produkty();
+    return isset($vsechny[$slug]) ? $vsechny[$slug] : null;
 }
 
 /** Seřadí pole produktů podle klíče */
@@ -57,7 +60,7 @@ function schema_product(array $p): string {
         'name'     => $p['nazev'],
         'brand'    => ['@type' => 'Brand', 'name' => $p['znacka']],
         'gtin13'   => $p['ean'],
-        'image'    => SITE_URL . $p['obrazek'],
+        'image'    => $p['obrazek'],
         'description' => $p['verdikt'],
     ];
     return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
@@ -85,7 +88,7 @@ function schema_itemlist(array $pole): string {
 
 /** Generuje JSON-LD BreadcrumbList */
 function schema_breadcrumb(array $cesta): string {
-    // $cesta = [['url' => '/', 'nazev' => 'Úvod'], ['url' => '/bosch-wan28263by/', 'nazev' => 'Bosch WAN28263BY'], ...]
+    // $cesta = [['url' => '/', 'nazev' => 'Úvod'], ['url' => '/bosch-wge03200by/', 'nazev' => 'Bosch WGE03200BY'], ...]
     $items = [];
     $i = 1;
     foreach ($cesta as $polozka) {
@@ -116,7 +119,7 @@ function formatuj_cenu(int $castka, string $datum): string {
 function datum_cz(string $datum): string {
     $mesice = ['', 'ledna', 'února', 'března', 'dubna', 'května', 'června',
                'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
-    [$y, $m, $d] = explode('-', $datum);
+    list($y, $m, $d) = explode('-', $datum);
     return (int)$d . '. ' . $mesice[(int)$m] . ' ' . $y;
 }
 
@@ -150,9 +153,10 @@ function nazev_segmentu(string $slug): string {
     return $nazvy[$slug] ?? $slug;
 }
 
-/** První segment produktu, pro který skutečně existuje stránka (pro breadcrumb) */
-function hlavni_segment(array $p): ?string {
-    foreach ($p['segmenty'] ?? [] as $seg) {
+/** První segment produktu, pro který skutečně existuje stránka (nebo null) */
+function hlavni_segment(array $p) {
+    $seznam = isset($p['segmenty']) ? $p['segmenty'] : [];
+    foreach ($seznam as $seg) {
         if (in_array($seg, segmenty_valid(), true)) return $seg;
     }
     return null;
@@ -218,7 +222,9 @@ function produkt_alternativy(array $p, int $pocet = 2): array {
         }
     }
     $kandidati = array_values($kandidati);
-    usort($kandidati, fn($a, $b) => abs($a['cena_orient'] - $p['cena_orient']) <=> abs($b['cena_orient'] - $p['cena_orient']));
+    usort($kandidati, function ($a, $b) use ($p) {
+        return abs($a['cena_orient'] - $p['cena_orient']) <=> abs($b['cena_orient'] - $p['cena_orient']);
+    });
     return array_slice($kandidati, 0, $pocet);
 }
 

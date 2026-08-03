@@ -8,6 +8,13 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="<?= url('/') ?>" class="site-logo" aria-label="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?> – úvod">
+      <svg class="site-logo__mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="#0f5257"/>
+        <circle cx="14" cy="12" r="3" fill="#fbfaf7" opacity=".9"/>
+        <circle cx="24" cy="12" r="3" fill="#fbfaf7" opacity=".55"/>
+        <circle cx="32" cy="36" r="18" fill="none" stroke="#fbfaf7" stroke-width="4.5"/>
+        <circle cx="32" cy="36" r="9" fill="none" stroke="#d9643a" stroke-width="4.5" stroke-dasharray="34 14" stroke-linecap="round" transform="rotate(-45 32 36)"/>
+      </svg>
       test-pracek.cz
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Otevřít navigaci">

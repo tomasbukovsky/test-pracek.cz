@@ -3,7 +3,23 @@ require_once __DIR__ . '/inc/config.php';
 require_once __DIR__ . '/inc/functions.php';
 
 $vsechny = produkty();
-$top = array_values($vsechny); // zatím všechny 3; po doplnění katalogu omezit na TOP 8
+// TOP 8: jeden zástupce z každé značky (podle nejnižší orientační ceny v rámci značky),
+// doplněno o další nejlevnější modely do počtu 8. Bez agregovaných recenzí zatím nelze
+// řadit podle skutečné obliby (viz metodika) — cena je jediné transparentní kritérium.
+$nejlevnejsi_podle_znacky = [];
+foreach (serad_produkty(array_values($vsechny), 'cena_orient', 'asc') as $p) {
+    if (!isset($nejlevnejsi_podle_znacky[$p['znacka']])) {
+        $nejlevnejsi_podle_znacky[$p['znacka']] = $p;
+    }
+}
+$top = array_values($nejlevnejsi_podle_znacky);
+foreach (serad_produkty(array_values($vsechny), 'cena_orient', 'asc') as $p) {
+    if (count($top) >= 8) break;
+    if (!in_array($p['slug'], array_column($top, 'slug'), true)) {
+        $top[] = $p;
+    }
+}
+$top = array_slice($top, 0, 8);
 
 $page_title       = 'Test praček 2026: srovnání nejprodávanějších modelů | test-pracek.cz';
 $page_description = 'Nezávislý přehled testů a uživatelských recenzí praček. Vychází z výsledků dTestu, Stiftung Warentest a stovek hodnocení na Alze a Heurece. Žádné vlastní testování – jen poctivá agregace.';
@@ -74,7 +90,7 @@ require_once __DIR__ . '/inc/header.php';
       <div class="produkt-blok__inner">
         <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="produkt-blok__img" tabindex="-1" aria-hidden="true">
           <img
-            src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
+            src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
             alt="<?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
             width="200" height="200"
             loading="<?= $i === 0 ? 'eager' : 'lazy' ?>"

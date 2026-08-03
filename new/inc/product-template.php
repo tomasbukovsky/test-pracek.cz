@@ -17,7 +17,7 @@ $breadcrumb_segment = hlavni_segment($p);
 $page_title       = $p['nazev'] . ': recenze, parametry a zkušenosti uživatelů';
 $page_description = 'Co říkají uživatelé na Alze a Heurece o pračce ' . $p['nazev'] . '? Parametry z registru EPREL, klady, zápory a srovnání s alternativami.';
 $page_canonical   = SITE_URL . '/' . $p['slug'] . '/';
-$page_og_image    = SITE_URL . $p['obrazek'];
+$page_og_image    = $p['obrazek'];
 
 $breadcrumb_cesta = [['url' => '/', 'nazev' => 'Test praček 2026']];
 if ($breadcrumb_segment) {
@@ -60,7 +60,7 @@ $alternativy = produkt_alternativy($p, 2);
   <div class="product-detail__header">
     <div class="product-detail__img">
       <img
-        src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
+        src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
         alt="Pračka <?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
         width="280" height="280"
         loading="eager"

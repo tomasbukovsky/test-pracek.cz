@@ -31,11 +31,13 @@ $faq_id_prefix = $faq_id_prefix ?? 'faq';
 <?= json_encode([
     '@context'   => 'https://schema.org',
     '@type'      => 'FAQPage',
-    'mainEntity' => array_map(fn($item) => [
-        '@type'          => 'Question',
-        'name'           => $item['q'],
-        'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags($item['a'])],
-    ], $faq_items),
+    'mainEntity' => array_map(function ($item) {
+        return [
+            '@type'          => 'Question',
+            'name'           => $item['q'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags($item['a'])],
+        ];
+    }, $faq_items),
 ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
 </script>
 

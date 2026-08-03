@@ -3,153 +3,157 @@ Naposledy uloženo: 2026-08-03
 
 ---
 
-## Co je hotovo
+## ⚠️ Než budeš pokračovat na jiném počítači
 
-### Krok 1 — Kostra ✅
-- `inc/config.php` — konstanty webu
-- `inc/functions.php` — pomocné PHP funkce
-- `inc/head.php` — sdílený `<head>` (meta, OG, schema)
-- `inc/header.php` — navigace (sticky, mobile toggle)
-- `inc/footer.php` — patička + GA4
-- `inc/components/` — product-card, product-table, faq, author-box, disclosure
-- `inc/segment-template.php` — sdílený template segmentových stránek
-- `assets/style.css` — kompletní CSS (mobile-first, breakpoint 768px)
-- `data/produkty.php` — **42 produktů**: Bosch (7), LG (6), Samsung (7), Whirlpool (8), AEG (7), Beko (7), Electrolux (2)
-
-### Krok 2 — Homepage + první produktová stránka ✅
-- `index.php` — homepage (úvod, tabulka, bloky, rozcestník, FAQ, autorský box)
-- `bosch-wan28263by/index.php` — vzorová produktová stránka
-
-### Krok 3 — Segmentové stránky ✅
-14 segmentů (každý s intro textem, tabulkou, TOP 3, FAQ, prolinkováním):
-- Značkové: `/pracky-lg/`, `/pracky-bosch/`, `/pracky-samsung/`, `/pracky-whirlpool/`, `/pracky-aeg/`, `/pracky-beko/`
-- Kapacitní: `/pracky-7-kg/`, `/pracky-8-kg/`, `/pracky-9-kg/`, `/pracky-10-kg/`
-- Typové: `/pracky-s-prednim-plnenim/`, `/uzke-pracky/`, `/vestavne-pracky/`, `/pracky-se-susickou/`
-
-Vynechané segmenty (méně než 5 produktů — dle pravidla v zadání):
-- `/pracky-electrolux/` (2 produkty)
-- `/pracky-s-hornim-plnenim/` (3 produkty)
+**Nic z práce popsané v tomto souboru zatím není commitnuté ani pushnuté na GitHub**
+(`github.com/tomasbukovsky/test-pracek.cz`, remote `origin` existuje). Všechno je zatím
+jen jako necommitnuté změny lokálně. Pokud chceš pokračovat jinde, je potřeba nejdřív
+z tohoto počítače commitnout a pushnout (nebo přenést soubory jinak) — samotný `STAV.md`
+kód nepřenáší, jen ho popisuje.
 
 ---
 
-## Co zbývá udělat (Claude)
+## ⚠️ Nejdůležitější aktuální poznámka
 
-### Krok 4 — Produktové stránky (41 zbývajících)
-Vzorová stránka `bosch-wan28263by/` existuje. Zbývá vytvořit stránky pro všechny ostatní produkty v `data/produkty.php`. Struktura je vždy stejná — viz zadání sekce 3.3.
+Katalog produktů byl **kompletně přestavěn** na reálná data z Alza affiliate feedu
+(`https://affiliate.alza.cz/feed.xml?id=40038`). Původních 42 produktů v `data/produkty.php`
+bylo z drtivé většiny **vymyšlených** (model `bosch-wan28263by` byl doslova ukázkový příklad
+ze zadání, který předchozí session vzala jako reálná data a zbytek katalogu domyslela ve
+stejném stylu) — proto Alza odkazy padaly na 404. Nahradil jsem všech 42 produktů reálnými
+modely spárovanými z feedu (skutečný EAN, cena, obrázek, produktová URL).
 
-### Krok 5 — Rádcové stránky (4)
-- `/jak-vybrat-pracku/` — pilířový rádce, 1 500+ slov
-- `/energeticke-tridy-pracek/` — jak číst štítek, EPREL
-- `/jaka-kapacita-pracky/` — kolik kg pro kolik osob
-- `/jak-cistit-pracku/` — údržba
+**Nemohl jsem ale nezávisle ověřit finální HTTP 200** na nové odkazy — Alza blokuje
+automatizované nástroje (`curl` i WebFetch dostávají 403 Forbidden, běžná bot ochrana).
+Odkazy pocházejí přímo z živého feedu (silný důkaz existence), ale doporučuji si pár
+náhodných produktových stránek proklikat v běžném prohlížeči, než to vezmeš jako 100% hotové.
 
-### Krok 6 — Důvěryhodnostní stránky (5)
-- `/metodika/` — nejdůležitější stránka webu
-- `/o-nas/` — autor, IČO, Person schema
-- `/kontakt/`
-- `/affiliate-informace/`
-- `/ochrana-osobnich-udaju/` — GDPR, cookies, GA4
+---
 
-### Krok 7 — Technické soubory
-- `sitemap.xml` (generovaný PHP z dat)
-- `robots.txt`
-- `.htaccess` (HTTPS, www, 301 přesměrování ročníků `/2022/` → `/`)
-- Ověření schema.org validátorem
+## Co je hotovo
+
+### Krok 1 — Kostra ✅
+- `inc/config.php` — konstanty webu (+ `AUTOR_EMAIL`)
+- `inc/functions.php` — pomocné PHP funkce, včetně nových: `nazev_segmentu`, `segmenty_valid`,
+  `hlavni_segment`, `popis_typu_plneni`, `je_invertorovy_motor`, `popis_pro_koho`,
+  `produkt_alternativy`, `popis_alternativy`, `schema_article`. Funkce jsou psané kompatibilně
+  s **PHP 7.0** (žádné arrow funkce, nullable return types ani krátké destrukturování — viz
+  poznámka níže o PHP verzi).
+- `inc/head.php`, `inc/header.php` (+ dropdown „Rádce"), `inc/footer.php`
+- `inc/components/` — product-card, product-table, faq, author-box, disclosure
+- `inc/segment-template.php` — sdílený template segmentových stránek
+- `inc/product-template.php` — sdílený template produktových stránek (viz Krok 4)
+- `assets/style.css` — kompletní CSS (mobile-first, breakpoint 768px)
+- `data/produkty.php` — **42 reálných produktů z Alza feedu**: Bosch (7), LG (6), Samsung (7),
+  Whirlpool (8), AEG (5), Beko (7), Electrolux (2 — bez vlastního segmentu, jako dřív)
+
+### Krok 2 — Homepage + produktové stránky ✅
+- `index.php` — TOP 8 na homepage je teď vybráno **1 nejlevnější model z každé značky** +
+  doplnění nejlevnějšími zbylými do počtu 8 (dřív tam bylo natvrdo jen prvních pár produktů —
+  bez agregovaných recenzí nemáme jiné transparentní kritérium řazení, viz metodika).
+
+### Krok 3 — Segmentové stránky ✅
+14 segmentů: pracky-lg, pracky-bosch, pracky-samsung, pracky-whirlpool, pracky-aeg, pracky-beko,
+pracky-7-kg, pracky-8-kg, pracky-9-kg, pracky-10-kg, pracky-s-prednim-plnenim, **uzke-pracky**,
+vestavne-pracky, pracky-se-susickou — všechny mají ≥5 reálných produktů.
+Segmenty electrolux a horního plnění nemají vlastní stránku (řádově pod 5 produktů), stejně jako předtím.
+
+### Krok 4 — Produktové stránky ✅
+Všech 42 produktů má vlastní stránku `/{slug}/index.php` — tenký soubor (3 řádky), který nastaví
+`$slug` a načte `inc/product-template.php`. Šablona automaticky odvozuje z `data/produkty.php`:
+breadcrumb, sekci „Co říkají uživatelé", 2 alternativy ze stejného segmentu, FAQ, tabulku parametrů
+(vč. kapacity sušičky u typu `susicka`).
+
+**Obrázky se teď natahují přímo z Alza CDN** (`cdn.alza.cz/products/...`) — to byl druhý problém,
+který jsi nahlásil (chybějící fotky). Řešení: máš affiliate feed od Alzy, který podle tebe obsahuje
+i povolené obrázky pro partnery, takže hotlinkování přímo z feedu je legální cesta (na rozdíl od
+stahování fotek z webu a rehostování na vlastním serveru bez licence). `obrazek` v datech teď
+obsahuje plnou CDN URL, ne lokální cestu — `url()` helper se na ni už nepoužívá.
+
+⚠️ Sekce „Co říkají uživatelé" (`recenze_shrnuti`, `pro`, `proti`) je zatím **obecný placeholder
+text** čekající na skutečné recenze z Alzy/Heureky — viz „Co musíš doplnit" níže. Nefabrikoval jsem
+konkrétní recenzní tvrzení, protože žádná reálná data o recenzích k dispozici nemám.
+
+### Krok 5 — Rádcové stránky ✅
+`/jak-vybrat-pracku/`, `/energeticke-tridy-pracek/`, `/jaka-kapacita-pracky/`, `/jak-cistit-pracku/`
+— všechny s `Article` + `Person` schématem.
+
+### Krok 6 — Důvěryhodnostní stránky ✅
+`/metodika/`, `/o-nas/`, `/kontakt/`, `/affiliate-informace/`, `/ochrana-osobnich-udaju/`.
+
+### Krok 7 — Technické soubory ✅
+- `sitemap.php` (generuje `sitemap.xml`, 66 URL, produkční `SITE_URL`)
+- `robots.txt`, `.htaccess` (https+www redirect, staré ročníky → `/`, rewrite sitemapy)
+
+### Krok 8 — Vizuální redesign ✅ (nově dokončeno)
+Web byl vizuálně stroký a zastaralý — přestavěna paleta, typografie, hlavička a nově vytvořené
+grafické assety:
+- **Barvy:** hluboká teal `#0f5257` (primární) + teplá terakota `#d9643a` (akcent/CTA) na
+  krémovém podkladu `#fbfaf7` — místo původní korporátní modré (`#1a5276`) a syté červené.
+  Všechny tokeny jsou v `:root` v `assets/style.css` (stejné názvy proměnných jako předtím,
+  jen nové hodnoty — inline `<style>` bloky v šablonách fungují beze změny).
+- **Typografie:** nadpisy na systémovém serifu (`ui-serif, Georgia...`), text zůstává na
+  `system-ui` sans — pořád **žádné externí fonty** (výkon/LCP nedotčen).
+- **Hlavička:** místo plné tmavé lišty teď světlá, poloprůhledná sticky hlavička s jemným
+  blur efektem a spodní linkou.
+- **Favicon a logo:** nové SVG assety v `assets/img/`:
+  - `icon.svg` (favicon mark, motiv bubnu pračky s odstřeďováním) + rastrované
+    `favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `apple-touch-icon.png` (180×180),
+    `icon-512.png`
+  - `logo.svg` + `logo.png` (vodorovný lockup ikona + „test-pracek.cz", pro `schema.org`
+    Organization.logo a sdílení)
+  - `inc/head.php` má nové `<link rel="icon">` tagy + `theme-color` meta; `inc/header.php`
+    má inline SVG ikonu vedle textového loga
+- **Detaily:** větší border-radius (10px), jemnější stíny, hover „nadzvednutí" na
+  produktových kartách, boxíky s produktovými fotkami mají **bílé pozadí** (produktové fotky
+  z Alzy už bílé pozadí mají, takže na bílém splynou lépe než na předchozím krémovém tónu).
+- Statický QA náhled (jen pro kontrolu v této konverzaci, není součástí nasazovaného webu):
+  https://claude.ai/code/artifact/4e32f178-b3de-49b6-b645-34481f62a228
+
+⚠️ Nemohl jsem to reálně vykreslit v prohlížeči — na tomto vývojovém stroji není nainstalované
+PHP (viz poznámka níže). Vizuál byl ověřen jen přes statický HTML náhled se skutečným CSS.
+Po nasazení/na jiném stroji s PHP stojí za to proklikat pár stránek naživo.
 
 ---
 
 ## Co musíš doplnit TY (provozovatel)
 
 ### 1. `inc/config.php`
-```
-GA4_ID    => reálné Google Analytics 4 ID (formát G-XXXXXXXXXX)
-AUTOR_ICO => tvoje IČO
-```
+`GA4_ID`, `AUTOR_ICO`, `AUTOR_EMAIL` (nyní placeholder `info@test-pracek.cz`)
 
-### 2. `data/produkty.php` — pro všech 42 produktů
-Každý produkt má hodnoty označené `/* EPREL: ověřit */`. Dohledej je v registru:
-**https://eprel.ec.europa.eu** → kategorie `washingmachines2019` → hledat podle EAN
+### 2. `data/produkty.php` — u všech 42 produktů
+- Hodnoty označené `/* EPREL: ověřit */` (`energ_trida`, `spotreba_kwh`, `spotreba_vody`,
+  `hlucnost_prani`, `hlucnost_odstred`, `trida_odstred`, `otacky` u některých) dohledej v
+  **https://eprel.ec.europa.eu** podle skutečného EAN (ten je už teď reálný, takže dohledání
+  bude fungovat — dřív to nešlo, protože EANy byly vymyšlené).
+- `alza_id`, `alza_url` — `banner_id` je nastaveno na tvoje `138051`, `idp=2504` zůstalo
+  z ukázky ve feedu — over, že je to tvoje správné `idp`.
+- `recenze_pocet`, `recenze_shrnuti`, `pro`, `proti` — přepsat po přečtení skutečných recenzí
+  (viz metodika, sekce 1 zadání). Zatím jsou to obecné placeholdery, ne vymyšlené konkrétní citace.
 
-Hodnoty k ověření u každého produktu:
-- `energ_trida` — energetická třída (A–G)
-- `spotreba_kwh` — spotřeba energie v kWh/100 cyklů (u sušiček kWh/rok)
-- `spotreba_vody` — roční spotřeba vody v litrech
-- `hlucnost_prani` — hlučnost při praní v dB
-- `hlucnost_odstred` — hlučnost při odstřeďování v dB
-- `trida_odstred` — třída účinnosti odstřeďování (A–G)
-- `eprel_url` — přesná URL záznamu v EPREL pro daný EAN
+### 3. `assets/img/` — pořád chybí
+Favicon a logo jsou už hotové (viz Krok 8). Pořád ale chybí:
+- `autor.jpg` — tvoje fotka (čtvercová, min. 160×160 px), zobrazuje se v autorském boxu na
+  každé stránce a na `/o-nas/`
+- `og-homepage.jpg` (1200×630 px) a volitelně `og-<segment>.jpg` pro sociální sdílení
+  jednotlivých stránek — bez nich stránky fungují, jen při sdílení na Facebooku/X nebude
+  náhledový obrázek
 
-Dále doplnit:
-- `alza_url` — správná affiliate URL z Alzy **s tvými parametry** (`idp=` a `banner_id=`)
-- `alza_id` — ID produktu na Alze (není nutné pro funkci webu, ale hodí se pro tracking)
-- `recenze_pocet` — aktuální počet hodnocení zákazníků (zjisti na Alze/Heurece)
-- `recenze_shrnuti` — texty jsou zástupné; **nahraď je po přečtení skutečných recenzí** na Alze a Heurece. Pravidla viz sekce 1 zadání (žádné vlastní testování, agregovat vzorce, uvádět zdroj)
-
-### 3. `assets/img/` — obrázky
-
-**Produktové obrázky** (pojmenování přesně dle slugu produktu):
-```
-bosch-wan28263by.jpg        bosch-waj28022by.jpg        bosch-wan28020by.jpg
-bosch-wgg142000e.jpg        bosch-wng254a0by.jpg        bosch-wab28262by.jpg
-bosch-wkd28352eu.jpg
-lg-f4wv509s1e.jpg           lg-f2wv3s7s3e.jpg           lg-f4wv508s0e.jpg
-lg-f4wv710s1e.jpg           lg-f4dr510s0w.jpg
-samsung-ww90t4040ee.jpg     samsung-ww70t4020ee.jpg     samsung-ww80t4040ee.jpg
-samsung-ww10t604dlw.jpg     samsung-wd10t654dbe.jpg     samsung-ww70j5355dw.jpg
-samsung-ww80m644opw.jpg
-whirlpool-fscr80420.jpg     whirlpool-fwsg71283bv.jpg   whirlpool-wrsb7259ds.jpg
-whirlpool-tdlrb7220l.jpg    whirlpool-aws71200.jpg      whirlpool-fwdg961bsv.jpg
-whirlpool-wdwg961485bsu.jpg whirlpool-wfsc71053pe.jpg
-aeg-lwr7485m4u.jpg          aeg-l6fbl841e.jpg           aeg-l7fbe841e.jpg
-aeg-l9wec163c.jpg           aeg-l7wee965.jpg            aeg-l6fbl741e.jpg
-aeg-l8fbe94sc.jpg
-beko-b3wft57423pw.jpg       beko-b3wfr59023pw.jpg       beko-b3wfr510023pw.jpg
-beko-bwi386d4.jpg           beko-wtv8612xs0.jpg         beko-btv8001bh0.jpg
-electrolux-ew6f3844as.jpg   electrolux-ew6f5943tp.jpg
-```
-
-**Ostatní obrázky:**
-```
-autor.jpg          — tvoje fotka (čtvercová, min. 160×160 px)
-logo.png           — logo webu (pro schema.org Organization)
-og-homepage.jpg    — OG obrázek pro homepage (1200×630 px)
-```
-OG obrázky pro segmenty (`og-pracky-lg.jpg` atd.) jsou volitelné — pokud chybí, stránky fungují bez nich.
-
-### 4. Texty recenzí (`recenze_shrnuti`)
-Všechny texty v `data/produkty.php` u klíče `recenze_shrnuti` jsou zástupné a **musí být přepsány** po přečtení skutečných recenzí na Alze a Heurece. Pravidla:
-- Žádné vlastní testování — pouze agregace cizích zdrojů
-- Uvádět, odkud informace pochází
-- Viz sekce 1 zadání (`zadani-test-pracek.md`)
-
----
-
-## Segmenty a jejich počty produktů
-
-| Segment | Produktů |
-|---|---|
-| pracky-s-prednim-plnenim | 29 |
-| pracky-7-kg | 13 |
-| pracky-8-kg | 12 |
-| pracky-9-kg | 12 |
-| pracky-whirlpool | 8 |
-| pracky-bosch | 7 |
-| pracky-samsung | 7 |
-| pracky-aeg | 7 |
-| pracky-beko | 6 |
-| pracky-lg | 5 |
-| pracky-se-susickou | 5 |
-| vestavne-pracky | 5 |
-| pracky-10-kg | 5 |
-| uzke-pracky | 5 |
-| pracky-s-hornim-plnenim | 3 — segment NEVZNIKL |
-| pracky-electrolux | 2 — segment NEVZNIKL |
+### 3. Ověření odkazů (kvůli tomu, co jsi nahlásil)
+Proklikej si prosím pár produktových stránek v běžném prohlížeči — já jsem nemohl `curl`/WebFetch
+kvůli Alza bot ochraně (403) nezávisle ověřit. Odkazy pocházejí přímo z živého affiliate feedu,
+takže by měly být v pořádku, ale chci to mít potvrzené reálným kliknutím.
 
 ---
 
 ## Poznámky
 
-- PHP soubory: všechny prošly `php -l` bez chyb
-- Zadání je v `zadani-test-pracek.md`
-- Záloha starého webu je v `_backup/`
-- Přesměrování starých ročníků (`/2022/` → `/`) je zatím pouze v dokumentaci zadání — implementovat v `.htaccess` (krok 7)
+- **PHP verze:** Server běží na starším PHP — testuj kompatibilitu. Kód je teď psaný tak, aby
+  fungoval od **PHP 7.0** výš (odstraněny arrow funkce, nullable return types, krátké
+  destrukturování polí). Původní kód vyžadoval PHP 7.4+.
+- PHP na tomto vývojovém stroji není nainstalované, takže `php -l` nešlo spustit — soubory
+  zkontrolované ručně, ne linterem. Spusť `php -l` na produkci/stagingu, jakmile to půjde.
+- Cesty na CSS/JS/podstránky jdou přes `url()` helper s `BASE_PATH = '/new'`; obrázky produktů
+  jsou teď externí CDN URL (bez `url()`).
+- Zadání je v `zadani-test-pracek.md`.
+- Přesměrování starých ročníků (`/20XX/ → /`) je v `.htaccess` — ověř po nasazení příkazem z
+  sekce 4.4.4 zadání.

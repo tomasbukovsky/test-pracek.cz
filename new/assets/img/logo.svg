@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 64">
+  <rect width="64" height="64" rx="16" fill="#0f5257"/>
+  <circle cx="14" cy="12" r="3" fill="#fbfaf7" opacity=".9"/>
+  <circle cx="24" cy="12" r="3" fill="#fbfaf7" opacity=".55"/>
+  <circle cx="32" cy="36" r="18" fill="none" stroke="#fbfaf7" stroke-width="4.5"/>
+  <circle cx="32" cy="36" r="9" fill="none" stroke="#d9643a" stroke-width="4.5" stroke-dasharray="34 14" stroke-linecap="round" transform="rotate(-45 32 36)"/>
+  <text x="78" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#221f1a">test-pracek<tspan fill="#d9643a">.cz</tspan></text>
+  <text x="78" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="13" letter-spacing="1.5" fill="#6b6459">SROVNÁNÍ A RECENZE PRAČEK</text>
+</svg>

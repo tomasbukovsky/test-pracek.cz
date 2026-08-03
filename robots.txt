@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /e.php
+Sitemap: https://www.test-pracek.cz/sitemap.xml

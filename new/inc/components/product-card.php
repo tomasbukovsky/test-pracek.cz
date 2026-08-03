@@ -7,7 +7,7 @@
 <article class="product-card" itemscope itemtype="https://schema.org/Product">
   <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="product-card__img-link" tabindex="-1" aria-hidden="true">
     <img
-      src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
+      src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
       alt="<?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
       width="300" height="300"
       loading="lazy"
