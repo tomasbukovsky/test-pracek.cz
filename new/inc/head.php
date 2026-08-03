@@ -17,6 +17,9 @@
 
 <title><?= htmlspecialchars($page_title ?? SITE_NAME, ENT_QUOTES, 'UTF-8') ?></title>
 <meta name="description" content="<?= htmlspecialchars($page_description ?? '', ENT_QUOTES, 'UTF-8') ?>">
+<?php if (NOINDEX): ?>
+<meta name="robots" content="noindex, nofollow">
+<?php endif; ?>
 <link rel="canonical" href="<?= htmlspecialchars($page_canonical ?? SITE_URL . '/', ENT_QUOTES, 'UTF-8') ?>">
 
 <!-- Open Graph -->
@@ -69,6 +72,6 @@ img{max-width:100%;height:auto;display:block}
 .container{width:100%;max-width:1100px;margin:0 auto;padding:0 1rem}
 h1,h2,h3{line-height:1.2;margin-top:0}
 </style>
-<link rel="stylesheet" href="/assets/style.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="/assets/style.css"></noscript>
+<link rel="stylesheet" href="<?= url('/assets/style.css') ?>" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="<?= url('/assets/style.css') ?>"></noscript>
 </head>

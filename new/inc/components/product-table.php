@@ -21,7 +21,7 @@
     <?php foreach ($produkty_pole as $p): ?>
     <tr>
       <td class="col-sticky">
-        <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
+        <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
       </td>
       <td><?= (int)$p['kapacita'] ?> kg</td>
       <td><?= (int)$p['otacky'] ?> ot./min</td>
@@ -43,4 +43,4 @@
   </tbody>
 </table>
 </div>
-<p class="table-note"><small>Ceny jsou orientační k datu uvedenému v tabulce. Aktuální ceny zjistíte u prodejce. Obsahuje <a href="/affiliate-informace/">affiliate odkazy</a>.</small></p>
+<p class="table-note"><small>Ceny jsou orientační k datu uvedenému v tabulce. Aktuální ceny zjistíte u prodejce. Obsahuje <a href="<?= url('/affiliate-informace/') ?>">affiliate odkazy</a>.</small></p>

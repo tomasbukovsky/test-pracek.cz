@@ -24,8 +24,8 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Drobečková navigace">
     <ol>
-      <li><a href="/">Test praček 2026</a></li>
-      <li><a href="/pracky-bosch/">Pračky Bosch</a></li>
+      <li><a href="<?= url('/') ?>">Test praček 2026</a></li>
+      <li><a href="<?= url('/pracky-bosch/') ?>">Pračky Bosch</a></li>
       <li aria-current="page"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></li>
     </ol>
   </nav>
@@ -42,7 +42,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <div class="product-detail__header">
     <div class="product-detail__img">
       <img
-        src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
+        src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
         alt="Pračka <?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
         width="280" height="280"
         loading="eager"
@@ -79,7 +79,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
       <p>
         <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--lg">Koupit na Alze →</a>
       </p>
-      <p class="text-muted"><small><a href="/affiliate-informace/">Affiliate odkaz</a> — nákupem podpoříte provoz webu.</small></p>
+      <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte provoz webu.</small></p>
     </div>
   </div>
 
@@ -201,17 +201,17 @@ require_once dirname(__DIR__) . '/inc/header.php';
     <p>Pokud hledáte srovnání s jinými modely přibližně ve stejné cenové hladině nebo s podobnými parametry:</p>
     <ul>
       <li>
-        <a href="/lg-f4wv509s1e/"><strong>LG F4WV509S1E</strong></a> —
+        <a href="<?= url('/lg-f4wv509s1e/') ?>"><strong>LG F4WV509S1E</strong></a> —
         9 kg, Wi-Fi, přímý pohon (10 let záruka motoru), nižší cena.
         Vhodné, pokud preferujete větší kapacitu a chytré funkce.
       </li>
       <li>
-        <a href="/samsung-ww90t4040ee/"><strong>Samsung WW90T4040EE</strong></a> —
+        <a href="<?= url('/samsung-ww90t4040ee/') ?>"><strong>Samsung WW90T4040EE</strong></a> —
         9 kg, energetická třída C, mělká hloubka 55 cm.
         Vhodné do menší koupelny nebo tam, kde kapacita převažuje nad spotřebou energie.
       </li>
     </ul>
-    <p><a href="/pracky-bosch/">Všechny pračky Bosch v přehledu →</a></p>
+    <p><a href="<?= url('/pracky-bosch/') ?>">Všechny pračky Bosch v přehledu →</a></p>
   </section>
 
   <!-- ================================================================
@@ -256,7 +256,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
 
   <!-- Metodika odkaz (povinný na každé produktové stránce) -->
   <p class="metodika-odkaz text-muted">
-    <small>Jak vznikají hodnocení na tomto webu? <a href="/metodika/">Přečtěte si naši metodiku</a>.</small>
+    <small>Jak vznikají hodnocení na tomto webu? <a href="<?= url('/metodika/') ?>">Přečtěte si naši metodiku</a>.</small>
   </p>
 
   <?php require_once dirname(__DIR__) . '/inc/components/author-box.php'; ?>

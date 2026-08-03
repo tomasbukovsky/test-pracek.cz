@@ -5,9 +5,9 @@
  */
 ?>
 <article class="product-card" itemscope itemtype="https://schema.org/Product">
-  <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/" class="product-card__img-link" tabindex="-1" aria-hidden="true">
+  <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="product-card__img-link" tabindex="-1" aria-hidden="true">
     <img
-      src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
+      src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
       alt="<?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
       width="300" height="300"
       loading="lazy"
@@ -16,7 +16,7 @@
   </a>
   <div class="product-card__body">
     <h3 class="product-card__title" itemprop="name">
-      <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
+      <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
     </h3>
     <p class="product-card__verdikt"><?= htmlspecialchars($p['verdikt'], ENT_QUOTES, 'UTF-8') ?></p>
     <dl class="product-card__params">
@@ -29,9 +29,9 @@
       <?= formatuj_cenu((int)$p['cena_orient'], $p['cena_datum']) ?>
     </p>
     <div class="product-card__cta">
-      <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/" class="btn btn--secondary">Celá recenze</a>
+      <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze</a>
       <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit na Alze</a>
     </div>
-    <p class="disclosure-inline"><small><a href="/affiliate-informace/">Affiliate odkaz</a> — nákupem podpoříte web.</small></p>
+    <p class="disclosure-inline"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte web.</small></p>
   </div>
 </article>

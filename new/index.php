@@ -41,7 +41,7 @@ require_once __DIR__ . '/inc/header.php';
       Výběr modelů v žebříčku vychází z prodejnosti a dostupnosti na českém trhu.
       Pořadí neovlivňují affiliate provize — vydělávat začneme až tehdy, když vám
       doporučíme pračku, se kterou budete spokojeni. Jak přesně vzniká naše hodnocení
-      vysvětluje <a href="/metodika/">stránka Metodika</a>.
+      vysvětluje <a href="<?= url('/metodika/') ?>">stránka Metodika</a>.
     </p>
   </section>
 
@@ -68,13 +68,13 @@ require_once __DIR__ . '/inc/header.php';
     <?php foreach ($top as $i => $p): ?>
     <article class="produkt-blok" id="<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>">
       <h3>
-        <?= $i + 1 ?>. <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
+        <?= $i + 1 ?>. <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>"><?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?></a>
       </h3>
 
       <div class="produkt-blok__inner">
-        <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/" class="produkt-blok__img" tabindex="-1" aria-hidden="true">
+        <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="produkt-blok__img" tabindex="-1" aria-hidden="true">
           <img
-            src="<?= htmlspecialchars($p['obrazek'], ENT_QUOTES, 'UTF-8') ?>"
+            src="<?= htmlspecialchars(url($p['obrazek']), ENT_QUOTES, 'UTF-8') ?>"
             alt="<?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
             width="200" height="200"
             loading="<?= $i === 0 ? 'eager' : 'lazy' ?>"
@@ -91,10 +91,10 @@ require_once __DIR__ . '/inc/header.php';
           <p class="text-muted"><small>Zdroj: hodnocení zákazníků ze zdrojů: <?= htmlspecialchars(implode(', ', $p['recenze_zdroje']), ENT_QUOTES, 'UTF-8') ?>.</small></p>
           <?php endif; ?>
           <p>
-            <a href="/<?= htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') ?>/" class="btn btn--secondary">Celá recenze →</a>
+            <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze →</a>
             <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit na Alze</a>
           </p>
-          <p class="text-muted"><small><a href="/affiliate-informace/">Affiliate odkaz</a> — nákupem podpoříte web bez příplatku.</small></p>
+          <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte web bez příplatku.</small></p>
         </div>
       </div>
     </article>
@@ -107,22 +107,22 @@ require_once __DIR__ . '/inc/header.php';
   <section class="segmenty-rozcestnik" aria-labelledby="segmenty-heading">
     <h2 id="segmenty-heading">Hledáte konkrétní typ pračky?</h2>
     <ul class="segmenty-grid">
-      <li><a href="/pracky-lg/">Pračky LG</a></li>
-      <li><a href="/pracky-bosch/">Pračky Bosch</a></li>
-      <li><a href="/pracky-samsung/">Pračky Samsung</a></li>
-      <li><a href="/pracky-whirlpool/">Pračky Whirlpool</a></li>
-      <li><a href="/pracky-aeg/">Pračky AEG</a></li>
-      <li><a href="/pracky-beko/">Pračky Beko</a></li>
-      <li><a href="/pracky-electrolux/">Pračky Electrolux</a></li>
-      <li><a href="/pracky-8-kg/">Pračky 8 kg</a></li>
-      <li><a href="/pracky-9-kg/">Pračky 9 kg</a></li>
-      <li><a href="/pracky-7-kg/">Pračky 7 kg</a></li>
-      <li><a href="/pracky-10-kg/">Pračky 10 kg</a></li>
-      <li><a href="/uzke-pracky/">Úzké pračky (40–45 cm)</a></li>
-      <li><a href="/pracky-s-prednim-plnenim/">S předním plněním</a></li>
-      <li><a href="/pracky-s-hornim-plnenim/">S horním plněním</a></li>
-      <li><a href="/vestavne-pracky/">Vestavné pračky</a></li>
-      <li><a href="/pracky-se-susickou/">Se sušičkou</a></li>
+      <li><a href="<?= url('/pracky-lg/') ?>">Pračky LG</a></li>
+      <li><a href="<?= url('/pracky-bosch/') ?>">Pračky Bosch</a></li>
+      <li><a href="<?= url('/pracky-samsung/') ?>">Pračky Samsung</a></li>
+      <li><a href="<?= url('/pracky-whirlpool/') ?>">Pračky Whirlpool</a></li>
+      <li><a href="<?= url('/pracky-aeg/') ?>">Pračky AEG</a></li>
+      <li><a href="<?= url('/pracky-beko/') ?>">Pračky Beko</a></li>
+      <li><a href="<?= url('/pracky-electrolux/') ?>">Pračky Electrolux</a></li>
+      <li><a href="<?= url('/pracky-8-kg/') ?>">Pračky 8 kg</a></li>
+      <li><a href="<?= url('/pracky-9-kg/') ?>">Pračky 9 kg</a></li>
+      <li><a href="<?= url('/pracky-7-kg/') ?>">Pračky 7 kg</a></li>
+      <li><a href="<?= url('/pracky-10-kg/') ?>">Pračky 10 kg</a></li>
+      <li><a href="<?= url('/uzke-pracky/') ?>">Úzké pračky (40–45 cm)</a></li>
+      <li><a href="<?= url('/pracky-s-prednim-plnenim/') ?>">S předním plněním</a></li>
+      <li><a href="<?= url('/pracky-s-hornim-plnenim/') ?>">S horním plněním</a></li>
+      <li><a href="<?= url('/vestavne-pracky/') ?>">Vestavné pračky</a></li>
+      <li><a href="<?= url('/pracky-se-susickou/') ?>">Se sušičkou</a></li>
     </ul>
   </section>
 
@@ -142,7 +142,7 @@ require_once __DIR__ . '/inc/header.php';
       <li><strong>Ceny:</strong> Orientační, vždy s datem. Web nemá napojení na aktuální ceníky — aktuální cenu vždy ověřte u prodejce.</li>
       <li><strong>Affiliate provize:</strong> Web vydělává, když kliknete na odkaz a nakoupíte. Pořadí v žebříčku tím není ovlivněno.</li>
     </ul>
-    <p><a href="/metodika/">Celá metodika hodnocení →</a></p>
+    <p><a href="<?= url('/metodika/') ?>">Celá metodika hodnocení →</a></p>
   </section>
 
   <!-- ================================================================
@@ -152,15 +152,15 @@ require_once __DIR__ . '/inc/header.php';
   $faq_items = [
     [
       'q' => 'Jaká pračka je nejlepší pro čtyřčlennou domácnost?',
-      'a' => 'Pro čtyřčlennou domácnost je vhodná pračka s kapacitou <strong>8–9 kg</strong>. Pokud rodina pere hodně ložního prádla nebo sportovního oblečení, uvažte 9 kg. Přehled modelů podle kapacity najdete v sekcích <a href="/pracky-8-kg/">pračky 8 kg</a> a <a href="/pracky-9-kg/">pračky 9 kg</a>.',
+      'a' => 'Pro čtyřčlennou domácnost je vhodná pračka s kapacitou <strong>8–9 kg</strong>. Pokud rodina pere hodně ložního prádla nebo sportovního oblečení, uvažte 9 kg. Přehled modelů podle kapacity najdete v sekcích <a href="<?= url('/pracky-8-kg/') ?>">pračky 8 kg</a> a <a href="<?= url('/pracky-9-kg/') ?>">pračky 9 kg</a>.',
     ],
     [
       'q' => 'Co znamená energetická třída A, B, C u praček?',
-      'a' => 'Od roku 2021 platí nová stupnice A–G. Třída <strong>A</strong> je nejúspornější, třída <strong>G</strong> nejméně úsporná. Většina praček dostupných na trhu v roce 2026 spadá do tříd B a C. Podrobné vysvětlení včetně příkladu výpočtu roční úspory najdete na stránce <a href="/energeticke-tridy-pracek/">Energetické třídy praček</a>.',
+      'a' => 'Od roku 2021 platí nová stupnice A–G. Třída <strong>A</strong> je nejúspornější, třída <strong>G</strong> nejméně úsporná. Většina praček dostupných na trhu v roce 2026 spadá do tříd B a C. Podrobné vysvětlení včetně příkladu výpočtu roční úspory najdete na stránce <a href="<?= url('/energeticke-tridy-pracek/') ?>">Energetické třídy praček</a>.',
     ],
     [
       'q' => 'Jsou pračky na tomto webu skutečně otestovány?',
-      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah je agregací uživatelských recenzí z Alzy a Heureky a výsledků nezávislých testů (dTest, Stiftung Warentest). Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="/metodika/">metodice</a>.',
+      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah je agregací uživatelských recenzí z Alzy a Heureky a výsledků nezávislých testů (dTest, Stiftung Warentest). Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="<?= url('/metodika/') ?>">metodice</a>.',
     ],
     [
       'q' => 'Proč na webu nejsou aktuální ceny?',
@@ -168,7 +168,7 @@ require_once __DIR__ . '/inc/header.php';
     ],
     [
       'q' => 'Vydělává web na affiliate odkazech a ovlivňuje to hodnocení?',
-      'a' => 'Ano, web vydělává affiliate provizi, pokud přes odkaz nakoupíte. <strong>Tato provize neovlivňuje pořadí v žebříčku ani obsah recenzí.</strong> Affiliate spolupráci transparentně uvádíme u každého odkazu i na samostatné stránce <a href="/affiliate-informace/">Affiliate informace</a>.',
+      'a' => 'Ano, web vydělává affiliate provizi, pokud přes odkaz nakoupíte. <strong>Tato provize neovlivňuje pořadí v žebříčku ani obsah recenzí.</strong> Affiliate spolupráci transparentně uvádíme u každého odkazu i na samostatné stránce <a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a>.',
     ],
   ];
   require __DIR__ . '/inc/components/faq.php';

@@ -3,6 +3,11 @@
  * Pomocné funkce webu test-pracek.cz
  */
 
+/** Vrátí interní URL cestu s prefixem BASE_PATH (viz inc/config.php) */
+function url(string $cesta = '/'): string {
+    return BASE_PATH . $cesta;
+}
+
 /** Načte a cachuje pole produktů */
 function produkty(): array {
     static $cache = null;
