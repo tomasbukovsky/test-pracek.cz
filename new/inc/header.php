@@ -42,7 +42,15 @@
             <li><a href="<?= url('/pracky-se-susickou/') ?>">Se sušičkou</a></li>
           </ul>
         </li>
-        <li><a href="<?= url('/jak-vybrat-pracku/') ?>">Jak vybrat</a></li>
+        <li class="nav-dropdown">
+          <a href="#" aria-haspopup="true">Rádce</a>
+          <ul>
+            <li><a href="<?= url('/jak-vybrat-pracku/') ?>">Jak vybrat pračku</a></li>
+            <li><a href="<?= url('/energeticke-tridy-pracek/') ?>">Energetické třídy</a></li>
+            <li><a href="<?= url('/jaka-kapacita-pracky/') ?>">Jaká kapacita</a></li>
+            <li><a href="<?= url('/jak-cistit-pracku/') ?>">Jak čistit pračku</a></li>
+          </ul>
+        </li>
         <li><a href="<?= url('/metodika/') ?>">Metodika</a></li>
       </ul>
     </nav>

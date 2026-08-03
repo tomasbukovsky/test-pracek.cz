@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0a9afca1-3e34-4a4a-9765-6f17612bf82b" name="test-pracek.cz" url="http://67093.w93.wedos.net">
+        <fileTransfer host="67093.w93.wedos.net" port="21" rootFolder="/www/domains/test-pracek.cz">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -14,3 +14,4 @@ define('GA4_ID', 'G-XXXXXXXXXX'); // doplnit reálné GA4 ID
 define('DATUM_AKTUALIZACE', '2026-08-02');
 define('AUTOR_JMENO', 'Tomáš Bukovský');
 define('AUTOR_ICO', ''); // doplnit IČO
+define('AUTOR_EMAIL', 'info@test-pracek.cz'); // doplnit reálný kontaktní e-mail

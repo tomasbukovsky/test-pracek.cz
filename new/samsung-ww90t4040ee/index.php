@@ -1,3 +1,3 @@
 <?php
-$slug = 'bosch-wan28263by';
+$slug = 'samsung-ww90t4040ee';
 require dirname(__DIR__) . '/inc/product-template.php';

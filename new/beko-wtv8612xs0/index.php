@@ -1,3 +1,3 @@
 <?php
-$slug = 'bosch-wan28263by';
+$slug = 'beko-wtv8612xs0';
 require dirname(__DIR__) . '/inc/product-template.php';
