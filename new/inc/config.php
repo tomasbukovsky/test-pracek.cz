@@ -10,8 +10,8 @@ define('BASE_PATH', '/new');
 // Dokud web běží na testovací cestě (BASE_PATH), nechceme ho v indexu vyhledávačů.
 define('NOINDEX', BASE_PATH !== '');
 
-define('GA4_ID', 'G-XXXXXXXXXX'); // doplnit reálné GA4 ID
+define('GA4_ID', 'G-7KH3EPBX3C'); // doplnit reálné GA4 ID
 define('DATUM_AKTUALIZACE', '2026-08-02');
-define('AUTOR_JMENO', 'Tomáš Bukovský');
-define('AUTOR_ICO', ''); // doplnit IČO
+define('AUTOR_JMENO', 'Radim Horáček');
+define('AUTOR_ICO', '70412651'); // doplnit IČO
 define('AUTOR_EMAIL', 'info@test-pracek.cz'); // doplnit reálný kontaktní e-mail
