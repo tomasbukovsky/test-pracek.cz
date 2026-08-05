@@ -69,9 +69,9 @@ require_once dirname(__DIR__) . '/inc/header.php';
 
   <h2>Jak web funguje po finanční stránce</h2>
   <p>
-    Web obsahuje affiliate odkazy na Alza.cz, ze kterých plyne provize při nákupu. Nejde o žádné
-    jiné formy zpoplatnění (placené recenze, sponzorované pořadí). Více na stránce
-    <a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a>.
+    Nakoupit můžete v partnerských, prověřených e-shopech — z těchto odkazů plyne webu provize
+    při nákupu. Nejde o žádné jiné formy zpoplatnění (placené recenze, sponzorované pořadí). Více
+    na stránce <a href="<?= url('/affiliate-informace/') ?>">Informace o spolupráci</a>.
   </p>
 
   <h2>Fakturační údaje</h2>

@@ -48,19 +48,19 @@ require_once dirname(__DIR__) . '/inc/header.php';
     nebo nastavením prohlížeče blokujícím cookies třetích stran.
   </p>
 
-  <h2>Affiliate odkazy (Alza.cz)</h2>
+  <h2>Odkazy na partnerské e-shopy</h2>
   <p>
-    Odkazy vedoucí na Alza.cz obsahují sledovací parametr partnerského programu, díky kterému
-    Alza pozná, že návštěvník přišel z tohoto webu, a přizná provizi. Tento mechanismus
+    Odkazy vedoucí k nákupu obsahují sledovací parametr partnerského programu, díky kterému
+    partnerský e-shop pozná, že návštěvník přišel z tohoto webu, a přizná provizi. Tento mechanismus
     nezpracovává žádné vaše osobní údaje na straně tohoto webu — sledování probíhá až po
-    kliknutí na straně Alza.cz. Podrobnosti najdete na stránce
-    <a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a>.
+    kliknutí na straně partnerského e-shopu. Podrobnosti najdete na stránce
+    <a href="<?= url('/affiliate-informace/') ?>">Informace o spolupráci</a>.
   </p>
 
   <h2>Jaké údaje web nezpracovává</h2>
   <ul>
     <li>Web nemá registraci uživatelů ani přihlašování.</li>
-    <li>Web neukládá platební ani fakturační údaje — veškeré nákupy probíhají na Alza.cz.</li>
+    <li>Web neukládá platební ani fakturační údaje — veškeré nákupy probíhají na webu partnerského e-shopu.</li>
     <li>Web neprodává ani nepředává údaje třetím stranám nad rámec standardního zpracování Google Analytics 4.</li>
   </ul>
 

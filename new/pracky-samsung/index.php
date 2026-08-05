@@ -8,7 +8,7 @@ $segment_intro = '
 <p>Samsung nabízí jedny z nejdostupnějších praček na českém trhu. Zákazníci na Alze a Heurece nejčastěji chválí <strong>příznivý poměr ceny a kapacity</strong> — modely Samsung bývají v daném kapacitním segmentu levnější než srovnatelné AEG nebo Bosch.</p>
 <p>Technologicky Samsung staví na <strong>digitálním invertoru</strong> (Digital Inverter Technology), na který poskytuje 11letou záruku na motor. Prémiová řada je doplněna o Wi-Fi ovládání přes aplikaci SmartThings.</p>
 <p>Výhrada, která se v hodnoceních zákazníků u Samsungu nejčastěji opakuje, je <strong>hlučnost při odstřeďování</strong> — zejména u modelů se třídou C, kde se hodnoty pohybují kolem 76–78 dB, což je o něco více než srovnatelné tiché modely LG nebo AEG. Třída C je u Samsungu v nižším segmentu cenou za nízkou pořizovací cenu.</p>
-<p>Parametry pocházejí z EPREL a feedu Alzy. Ceny jsou orientační.</p>
+<p>Parametry pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
 $faq_items = [

@@ -8,7 +8,7 @@ $segment_intro = '
 <p>AEG je prémiová značka skupiny Electrolux, v recenzích zákazníků konzistentně hodnocená jako <strong>jedna z nejtišších na trhu</strong>. Hlučnost při odstřeďování se u AEG modelů pohybuje kolem 68–74 dB, zatímco srovnatelné cenově střední modely dosahují 74–78 dB. Pro zákazníky, kteří pere přes noc nebo v otevřeném bytě, je tento rozdíl klíčový.</p>
 <p>Technologickým základem je <strong>invertorový motor</strong> s nízkou hlučností a technologie <strong>UltraCare</strong> pro šetrné praní choulostivých materiálů. Prémiové modely jsou vybaveny Wi-Fi a dosahují energetické třídy A — nejlepší dostupné na trhu.</p>
 <p>Výhradou, která se v recenzích opakuje nejčastěji, je <strong>vyšší pořizovací cena</strong> a větší hloubka kabiny (kolem 63–64 cm), která nemusí sedět do každé koupelny. AEG rovněž nabízí vestavné provedení a kombinované pračky se sušičkou.</p>
-<p>Parametry pocházejí z EPREL a feedu Alzy. Ceny jsou orientační.</p>
+<p>Parametry pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
 $faq_items = [

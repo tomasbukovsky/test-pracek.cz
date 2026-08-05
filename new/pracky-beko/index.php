@@ -8,7 +8,7 @@ $segment_intro = '
 <p>Beko je turecká značka (součást Arçelik Group) a na českém trhu ji zákazníci na Alze a Heurece hodnotí primárně jako <strong>nejdostupnější volbu</strong> s přijatelnými parametry. Hlavní výhoda Beka je jasná: kapacity, které u prémiových značek stojí výrazně více, jsou u Beka dostupné za nižší cenu.</p>
 <p>Technologickým základem je motor <strong>ProSmart Invertor</strong>, na který Beko poskytuje 10letou záruku na motor. Ve třídě B i třídě C Beko nabízí modely ve všech hlavních kapacitách (7, 8, 9, 10 kg) i specifické typy — vestavné provedení a úzké pračky (45 cm).</p>
 <p>Výhradou zákazníků je <strong>vyšší hlučnost při praní</strong> (49–50 dB oproti 44–47 dB u tišší konkurence) a v nižším segmentu také nižší maximální otáčky (1 000 ot./min), což znamená mokřejší prádlo po vyprání. Beko je dobrou volbou tam, kde cena rozhoduje nad ostatními parametry.</p>
-<p>Parametry pocházejí z EPREL a feedu Alzy. Ceny jsou orientační.</p>
+<p>Parametry pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
 $faq_items = [

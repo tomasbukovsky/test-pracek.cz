@@ -60,7 +60,7 @@ $top3 = array_slice($produkty_segmentu, 0, 3);
   <!-- Srovnávací tabulka všech produktů v segmentu -->
   <section aria-labelledby="tabulka-heading">
     <h2 id="tabulka-heading">Přehled <?= htmlspecialchars(mb_strtolower($segment_h1), ENT_QUOTES, 'UTF-8') ?></h2>
-    <p class="text-muted">Seřazeno podle orientační ceny. Parametry z EPREL a feedu Alzy. Ceny jsou orientační.</p>
+    <p class="text-muted">Seřazeno podle orientační ceny. Parametry z EPREL a feedu prodejce. Ceny jsou orientační.</p>
     <?php require dirname(__DIR__) . '/inc/components/product-table.php'; ?>
   </section>
 
@@ -76,7 +76,7 @@ $top3 = array_slice($produkty_segmentu, 0, 3);
       <p><?= htmlspecialchars($p['recenze_shrnuti'], ENT_QUOTES, 'UTF-8') ?></p>
       <p>
         <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze</a>
-        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit na Alze</a>
+        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit</a>
       </p>
     </article>
     <?php endforeach; ?>

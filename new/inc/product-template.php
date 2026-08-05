@@ -89,15 +89,15 @@ $alternativy = produkt_alternativy($p, 2);
         </tbody>
       </table>
 
-      <p><small>Parametry pocházejí z registru <a href="<?= htmlspecialchars($p['eprel_url'], ENT_QUOTES, 'UTF-8') ?>" rel="noopener noreferrer" target="_blank">EPREL (eprel.ec.europa.eu)</a> a feedu Alzy.</small></p>
+      <p><small>Parametry pocházejí z registru <a href="<?= htmlspecialchars($p['eprel_url'], ENT_QUOTES, 'UTF-8') ?>" rel="noopener noreferrer" target="_blank">EPREL (eprel.ec.europa.eu)</a> a feedu prodejce.</small></p>
 
       <p class="product-cena">
         <?= formatuj_cenu((int)$p['cena_orient'], $p['cena_datum']) ?>
       </p>
       <p>
-        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--lg">Koupit na Alze →</a>
+        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--lg">Koupit →</a>
       </p>
-      <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte provoz webu.</small></p>
+      <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte provoz webu.</small></p>
     </div>
   </div>
 
@@ -252,7 +252,7 @@ $alternativy = produkt_alternativy($p, 2);
     <h2>Kde koupit</h2>
     <p>
       <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--lg">
-        Koupit <?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?> na Alze →
+        Koupit <?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?> →
       </a>
     </p>
     <?php require_once dirname(__DIR__) . '/inc/components/disclosure.php'; ?>

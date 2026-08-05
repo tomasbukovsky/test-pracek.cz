@@ -30,8 +30,8 @@
     </p>
     <div class="product-card__cta">
       <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze</a>
-      <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit na Alze</a>
+      <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit</a>
     </div>
-    <p class="disclosure-inline"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte web.</small></p>
+    <p class="disclosure-inline"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte web.</small></p>
   </div>
 </article>

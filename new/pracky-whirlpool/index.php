@@ -7,7 +7,7 @@ $page_description = 'Přehled praček Whirlpool na českém trhu. Parametry z EP
 $segment_intro = '
 <p>Whirlpool je jedním z největších výrobců spotřebičů na světě a na českém trhu nabízí pračky v širokém cenovém rozsahu. Charakteristickým prvkem je technologie <strong>6th Sense</strong>, která automaticky přizpůsobuje program podle náplně — délku cyklu, množství vody i teplotu. Zákazníci ji v recenzích zmiňují jako reálně fungující funkci, nikoli jen marketingovou zkratku.</p>
 <p>Portfolio Whirlpool zahrnuje jak pračky s <strong>předním plněním</strong>, tak tradiční <strong>s horním plněním</strong> (šíře 40 cm) — ty jsou oblíbené v malých koupelnách, kde není přístup k pračce zepředu. V hodnoceních zákazníků se jako výhoda horního plnění opakuje možnost přidat kus prádla kdykoli během cyklu.</p>
-<p>Výhrada, která se v recenzích Whirlpool opakuje, je občasná hlučnost u starších modelů a větší hloubka kabiny (kolem 60–61 cm) u přednoplnících modelů. Parametry níže pocházejí z EPREL a feedu Alzy.</p>
+<p>Výhrada, která se v recenzích Whirlpool opakuje, je občasná hlučnost u starších modelů a větší hloubka kabiny (kolem 60–61 cm) u přednoplnících modelů. Parametry níže pocházejí z EPREL a feedu prodejce.</p>
 ';
 
 $faq_items = [

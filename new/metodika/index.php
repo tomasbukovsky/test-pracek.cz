@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/inc/config.php';
 require_once dirname(__DIR__) . '/inc/functions.php';
 
 $page_title       = 'Metodika: jak vzniká obsah a hodnocení na test-pracek.cz';
-$page_description = 'Jak web test-pracek.cz pracuje se zdroji, jak vzniká pořadí v žebříčcích, jak často se obsah aktualizuje a jak web vydělává na affiliate provizích.';
+$page_description = 'Jak web test-pracek.cz pracuje se zdroji, jak vzniká pořadí v žebříčcích, jak často se obsah aktualizuje a jak web vydělává na spolupráci s e-shopy.';
 $page_canonical   = SITE_URL . '/metodika/';
 $schema_json      = schema_article($page_title, $page_description, $page_canonical)
                   . schema_breadcrumb([
@@ -28,7 +28,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
 
   <p>
     Tato stránka popisuje na rovinu, jak <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?> pracuje —
-    protože transparentnost je u affiliate webu podmínkou důvěryhodnosti, ne volitelná položka.
+    protože transparentnost je u webu, který vydělává na spolupráci s e-shopy, podmínkou důvěryhodnosti, ne volitelná položka.
   </p>
 
   <h2>1. Netestujeme pračky ve vlastní laboratoři</h2>
@@ -44,7 +44,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
     <li><strong>Uživatelská hodnocení e-shopů</strong> (Alza, Heureka) — agregujeme opakující se vzorce z desítek až stovek recenzí u konkrétního modelu. Nikdy nekopírujeme recenze doslova; krátký citát v uvozovkách používáme maximálně jeden na produkt, vždy s uvedením zdroje.</li>
     <li><strong>dTest</strong> a <strong>Stiftung Warentest</strong> — pokud pro model existuje nezávislý test, uvádíme pouze fakt, že test proběhl, kdy a jak produkt dopadl v celkovém hodnocení, s odkazem na originál. Nikdy nereprodukujeme dílčí známky ani placený obsah.</li>
     <li><strong>Registr EPREL</strong> (Evropský registr energetických štítků, <a href="https://eprel.ec.europa.eu" rel="noopener noreferrer" target="_blank">eprel.ec.europa.eu</a>) — odtud pocházejí všechny technické parametry: energetická třída, spotřeba energie a vody, hlučnost, třída odstřeďování.</li>
-    <li><strong>Feed Alzy</strong> — dostupnost a orientační cena, vždy s datem, kdy byla naposledy ověřena.</li>
+    <li><strong>Feed partnerského e-shopu</strong> — dostupnost a orientační cena, vždy s datem, kdy byla naposledy ověřena.</li>
   </ul>
   <p>
     Pokud pro produkt zdroje nestačí, píšeme kratší stránku. Chybějící informace nikdy nedoplňujeme
@@ -68,19 +68,19 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2>4. Jak často se obsah aktualizuje</h2>
   <p>
     Datum poslední aktualizace je uvedené v patičce každé stránky a v autorském boxu. Parametry
-    z EPREL a ceny z feedu Alzy procházíme kontrolou průběžně; sekce s recenzemi aktualizujeme,
+    z EPREL a ceny z feedu prodejce procházíme kontrolou průběžně; sekce s recenzemi aktualizujeme,
     když se v agregovaných hodnoceních objeví nový výrazný vzorec (nová opakující se výtka nebo
     pochvala).
   </p>
 
   <h2>5. Jak web vydělává a proč to neovlivňuje hodnocení</h2>
   <p>
-    Web obsahuje affiliate odkazy na Alza.cz — pokud přes ně nakoupíte, dostaneme provizi, aniž
-    by vás to stálo cokoliv navíc. To je jediný způsob, jak web vydělává; nejsou tu placené
-    recenze ani sponzorované pořadí. <strong>Výše ani existence provize neovlivňuje, jak je
-    produkt v textu popsaný ani na jaké pozici se v žebříčku objeví</strong> — pořadí vychází
-    výhradně z bodu 3 výše. Podrobnosti o affiliate spolupráci najdete na stránce
-    <a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a>.
+    Nakoupit můžete v partnerských, prověřených e-shopech — pokud přes tyto odkazy nakoupíte,
+    dostaneme provizi, aniž by vás to stálo cokoliv navíc. To je jediný způsob, jak web vydělává;
+    nejsou tu placené recenze ani sponzorované pořadí. <strong>Výše ani existence provize
+    neovlivňuje, jak je produkt v textu popsaný ani na jaké pozici se v žebříčku objeví</strong>
+    — pořadí vychází výhradně z bodu 3 výše. Podrobnosti o spolupráci s e-shopy najdete na stránce
+    <a href="<?= url('/affiliate-informace/') ?>">Informace o spolupráci</a>.
   </p>
 
   <?php require_once dirname(__DIR__) . '/inc/components/author-box.php'; ?>

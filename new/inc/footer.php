@@ -10,15 +10,15 @@
       <ul class="footer-links">
         <li><a href="<?= url('/o-nas/') ?>">O nás</a></li>
         <li><a href="<?= url('/metodika/') ?>">Metodika hodnocení</a></li>
-        <li><a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a></li>
+        <li><a href="<?= url('/affiliate-informace/') ?>">Informace o spolupráci</a></li>
         <li><a href="<?= url('/kontakt/') ?>">Kontakt</a></li>
         <li><a href="<?= url('/ochrana-osobnich-udaju/') ?>">Ochrana osobních údajů</a></li>
       </ul>
     </nav>
     <p class="footer-copy">
       &copy; <?= date('Y') ?> <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>.
-      Web obsahuje affiliate odkazy na Alzu — nákupem přes ně podpoříte provoz webu bez příplatku.
-      Hodnocení produktů tím není ovlivněno.
+      Nakoupit můžete v partnerských, prověřených e-shopech — nákupem přes odkazy na webu podpoříte
+      jeho provoz bez příplatku. Hodnocení produktů tím není ovlivněno.
       <a href="<?= url('/affiliate-informace/') ?>">Více info</a>.
     </p>
     <p class="footer-update">Poslední aktualizace: <?= htmlspecialchars(datum_cz(DATUM_AKTUALIZACE), ENT_QUOTES, 'UTF-8') ?></p>

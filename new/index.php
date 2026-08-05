@@ -55,8 +55,9 @@ require_once __DIR__ . '/inc/header.php';
     </p>
     <p>
       Výběr modelů v žebříčku vychází z prodejnosti a dostupnosti na českém trhu.
-      Pořadí neovlivňují affiliate provize — vydělávat začneme až tehdy, když vám
-      doporučíme pračku, se kterou budete spokojeni. Jak přesně vzniká naše hodnocení
+      Pořadí neovlivňuje provize z prodeje — vydělávat začneme až tehdy, když vám
+      doporučíme pračku, se kterou budete spokojeni. Nakoupit pak můžete v partnerských,
+      prověřených e-shopech. Jak přesně vzniká naše hodnocení
       vysvětluje <a href="<?= url('/metodika/') ?>">stránka Metodika</a>.
     </p>
   </section>
@@ -108,9 +109,9 @@ require_once __DIR__ . '/inc/header.php';
           <?php endif; ?>
           <p>
             <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze →</a>
-            <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit na Alze</a>
+            <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit</a>
           </p>
-          <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Affiliate odkaz</a> — nákupem podpoříte web bez příplatku.</small></p>
+          <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte web bez příplatku.</small></p>
         </div>
       </div>
     </article>
@@ -154,9 +155,9 @@ require_once __DIR__ . '/inc/header.php';
     </p>
     <ul>
       <li><strong>Nezávislé testy:</strong> Tam, kde existuje test dTestu nebo Stiftung Warentest, uvádíme jeho výsledek a datum. Reprodukujeme pouze celkové hodnocení — placený obsah nepřebíráme.</li>
-      <li><strong>Technické parametry:</strong> Výhradně z registru EPREL nebo z feedu Alzy. Nic neodhadujeme.</li>
+      <li><strong>Technické parametry:</strong> Výhradně z registru EPREL nebo z feedu prodejce. Nic neodhadujeme.</li>
       <li><strong>Ceny:</strong> Orientační, vždy s datem. Web nemá napojení na aktuální ceníky — aktuální cenu vždy ověřte u prodejce.</li>
-      <li><strong>Affiliate provize:</strong> Web vydělává, když kliknete na odkaz a nakoupíte. Pořadí v žebříčku tím není ovlivněno.</li>
+      <li><strong>Provize z prodeje:</strong> Web vydělává, když kliknete na odkaz do partnerského e-shopu a nakoupíte. Pořadí v žebříčku tím není ovlivněno.</li>
     </ul>
     <p><a href="<?= url('/metodika/') ?>">Celá metodika hodnocení →</a></p>
   </section>
@@ -168,23 +169,23 @@ require_once __DIR__ . '/inc/header.php';
   $faq_items = [
     [
       'q' => 'Jaká pračka je nejlepší pro čtyřčlennou domácnost?',
-      'a' => 'Pro čtyřčlennou domácnost je vhodná pračka s kapacitou <strong>8–9 kg</strong>. Pokud rodina pere hodně ložního prádla nebo sportovního oblečení, uvažte 9 kg. Přehled modelů podle kapacity najdete v sekcích <a href="<?= url('/pracky-8-kg/') ?>">pračky 8 kg</a> a <a href="<?= url('/pracky-9-kg/') ?>">pračky 9 kg</a>.',
+      'a' => 'Pro čtyřčlennou domácnost je vhodná pračka s kapacitou <strong>8–9 kg</strong>. Pokud rodina pere hodně ložního prádla nebo sportovního oblečení, uvažte 9 kg. Přehled modelů podle kapacity najdete v sekcích <a href="' . url('/pracky-8-kg/') . '">pračky 8 kg</a> a <a href="' . url('/pracky-9-kg/') . '">pračky 9 kg</a>.',
     ],
     [
       'q' => 'Co znamená energetická třída A, B, C u praček?',
-      'a' => 'Od roku 2021 platí nová stupnice A–G. Třída <strong>A</strong> je nejúspornější, třída <strong>G</strong> nejméně úsporná. Většina praček dostupných na trhu v roce 2026 spadá do tříd B a C. Podrobné vysvětlení včetně příkladu výpočtu roční úspory najdete na stránce <a href="<?= url('/energeticke-tridy-pracek/') ?>">Energetické třídy praček</a>.',
+      'a' => 'Od roku 2021 platí nová stupnice A–G. Třída <strong>A</strong> je nejúspornější, třída <strong>G</strong> nejméně úsporná. Většina praček dostupných na trhu v roce 2026 spadá do tříd B a C. Podrobné vysvětlení včetně příkladu výpočtu roční úspory najdete na stránce <a href="' . url('/energeticke-tridy-pracek/') . '">Energetické třídy praček</a>.',
     ],
     [
       'q' => 'Jsou pračky na tomto webu skutečně otestovány?',
-      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah je agregací uživatelských recenzí z Alzy a Heureky a výsledků nezávislých testů (dTest, Stiftung Warentest). Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="<?= url('/metodika/') ?>">metodice</a>.',
+      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah je agregací uživatelských recenzí z Alzy a Heureky a výsledků nezávislých testů (dTest, Stiftung Warentest). Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="' . url('/metodika/') . '">metodice</a>.',
     ],
     [
       'q' => 'Proč na webu nejsou aktuální ceny?',
       'a' => 'Web nemá napojení na živé ceníky. Ceny praček se mění denně a staticky uvedená cena by v řádu dní zastárala a byla by zavádějící. Proto uvádíme pouze orientační cenu k datu jejího zjištění a vždy doporučujeme ověřit aktuální cenu přímo u prodejce.',
     ],
     [
-      'q' => 'Vydělává web na affiliate odkazech a ovlivňuje to hodnocení?',
-      'a' => 'Ano, web vydělává affiliate provizi, pokud přes odkaz nakoupíte. <strong>Tato provize neovlivňuje pořadí v žebříčku ani obsah recenzí.</strong> Affiliate spolupráci transparentně uvádíme u každého odkazu i na samostatné stránce <a href="<?= url('/affiliate-informace/') ?>">Affiliate informace</a>.',
+      'q' => 'Vydělává web na odkazech k nákupu a ovlivňuje to hodnocení?',
+      'a' => 'Ano, pokud nakoupíte přes odkaz do partnerského e-shopu, web dostane provizi. <strong>Tato provize neovlivňuje pořadí v žebříčku ani obsah recenzí.</strong> Spolupráci s e-shopy transparentně uvádíme u každého odkazu i na samostatné stránce <a href="' . url('/affiliate-informace/') . '">Informace o spolupráci</a>.',
     ],
   ];
   require __DIR__ . '/inc/components/faq.php';

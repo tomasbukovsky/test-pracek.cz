@@ -192,7 +192,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
     ],
     [
       'q' => 'Odkud pocházejí parametry uvedené u jednotlivých praček na tomto webu?',
-      'a' => 'Z veřejného registru EPREL (energetické třídy, spotřeba, hlučnost) a z feedu Alzy (cena, dostupnost). Nic neodhadujeme — pokud parametr chybí, sekci raději vynecháme. Více v <a href="' . url('/metodika/') . '">metodice</a>.',
+      'a' => 'Z veřejného registru EPREL (energetické třídy, spotřeba, hlučnost) a z feedu prodejce (cena, dostupnost). Nic neodhadujeme — pokud parametr chybí, sekci raději vynecháme. Více v <a href="' . url('/metodika/') . '">metodice</a>.',
     ],
   ];
   require dirname(__DIR__) . '/inc/components/faq.php';

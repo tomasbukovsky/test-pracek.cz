@@ -8,7 +8,7 @@ $segment_intro = '
 <p>Bosch je jednou z nejdůvěryhodnějších značek v kategorii praček v českém prostředí. Zákazníci ji opakovaně zmiňují v souvislosti se <strong>spolehlivostí a dostupným servisem</strong> — v hodnoceních se jako jeden z hlavních důvodů volby Bosch uvádí existence husté servisní sítě.</p>
 <p>Řada praček Bosch pokrývá kapacity 7–9 kg, přičemž většina modelů je vybavena <strong>invertorem</strong>. Klíčový parametr, který v uživatelských recenzích ovlivňuje spokojenost, je hlučnost. Modely Bosch s invertorem bývají v hodnoceních zákazníků hodnoceny jako tišší než srovnatelné standardní motory.</p>
 <p>Specifická výhrada, která se v recenzích zákazníků opakuje napříč modely Bosch, je <strong>délka přívodního kabelu</strong> (kolem 1,5 m), která v některých koupelnách vyžaduje prodlužovací kabel nebo úpravu instalace.</p>
-<p>Parametry v tabulce níže pocházejí z registru EPREL a feedu Alzy. Ceny jsou orientační — aktuální cenu ověřte u prodejce.</p>
+<p>Parametry v tabulce níže pocházejí z registru EPREL a feedu prodejce. Ceny jsou orientační — aktuální cenu ověřte u prodejce.</p>
 ';
 
 $faq_items = [

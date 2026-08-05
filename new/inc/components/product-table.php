@@ -36,11 +36,11 @@
         <?php endif; ?>
       </td>
       <td>
-        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--sm">Alza</a>
+        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--sm">Koupit</a>
       </td>
     </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
 </div>
-<p class="table-note"><small>Ceny jsou orientační k datu uvedenému v tabulce. Aktuální ceny zjistíte u prodejce. Obsahuje <a href="<?= url('/affiliate-informace/') ?>">affiliate odkazy</a>.</small></p>
+<p class="table-note"><small>Ceny jsou orientační k datu uvedenému v tabulce. Aktuální ceny zjistíte u prodejce. Obsahuje <a href="<?= url('/affiliate-informace/') ?>">odkazy na partnerské e-shopy</a>.</small></p>
