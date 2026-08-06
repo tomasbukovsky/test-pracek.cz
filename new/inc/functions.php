@@ -59,10 +59,14 @@ function schema_product(array $p): string {
         '@type'    => 'Product',
         'name'     => $p['nazev'],
         'brand'    => ['@type' => 'Brand', 'name' => $p['znacka']],
-        'gtin13'   => $p['ean'],
         'image'    => $p['obrazek'],
         'description' => $p['verdikt'],
+        'sku'      => $p['alza_id'],
     ];
+    // gtin13 jen pokud EAN opravdu máme - prázdný/neplatný GTIN by strukturovaná data rozbil.
+    if (!empty($p['ean'])) {
+        $schema['gtin13'] = $p['ean'];
+    }
     return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
 }
 
@@ -95,7 +99,8 @@ function schema_breadcrumb(array $cesta): string {
         $items[] = [
             '@type'    => 'ListItem',
             'position' => $i++,
-            'item'     => ['@id' => SITE_URL . $polozka['url'], 'name' => $polozka['nazev']],
+            'name'     => $polozka['nazev'],
+            'item'     => SITE_URL . $polozka['url'],
         ];
     }
     $schema = [
@@ -110,9 +115,15 @@ function schema_breadcrumb(array $cesta): string {
 function formatuj_cenu(int $castka, string $datum): string {
     return sprintf(
         'Orientační cena k %s: <strong>%s Kč</strong>. Aktuální cenu najdete u prodejce.',
-        htmlspecialchars(datum_cz($datum), ENT_QUOTES, 'UTF-8'),
+        htmlspecialchars(datum_cz_cisly($datum), ENT_QUOTES, 'UTF-8'),
         number_format($castka, 0, ',', ' ')
     );
+}
+
+/** Formátuje datum do krátkého českého číselného formátu (den. měsíc. rok) - používá se u cen */
+function datum_cz_cisly(string $datum): string {
+    list($y, $m, $d) = explode('-', $datum);
+    return (int)$d . '. ' . (int)$m . '. ' . $y;
 }
 
 /** Formátuje datum do českého formátu */
@@ -128,7 +139,7 @@ function segmenty_valid(): array {
     return [
         'pracky-lg', 'pracky-bosch', 'pracky-samsung', 'pracky-whirlpool', 'pracky-aeg', 'pracky-beko',
         'pracky-7-kg', 'pracky-8-kg', 'pracky-9-kg', 'pracky-10-kg',
-        'pracky-s-prednim-plnenim', 'uzke-pracky', 'vestavne-pracky', 'pracky-se-susickou',
+        'pracky-s-prednim-plnenim', 'pracky-s-hornim-plnenim', 'uzke-pracky', 'vestavne-pracky', 'pracky-se-susickou',
     ];
 }
 
@@ -146,6 +157,7 @@ function nazev_segmentu(string $slug): string {
         'pracky-9-kg'              => 'Pračky 9 kg',
         'pracky-10-kg'             => 'Pračky 10 kg',
         'pracky-s-prednim-plnenim' => 'Pračky s předním plněním',
+        'pracky-s-hornim-plnenim'  => 'Pračky s horním plněním',
         'uzke-pracky'              => 'Úzké pračky',
         'vestavne-pracky'          => 'Vestavné pračky',
         'pracky-se-susickou'       => 'Pračky se sušičkou',
@@ -229,12 +241,13 @@ function produkt_alternativy(array $p, int $pocet = 2): array {
 }
 
 /** Generuje JSON-LD Article + Person (autor) schema pro rádcové stránky */
-function schema_article(string $nazev, string $popis, string $url): string {
+function schema_article(string $nazev, string $popis, string $url, string $obrazek = ''): string {
     $schema = [
         '@context'      => 'https://schema.org',
         '@type'         => 'Article',
         'headline'      => $nazev,
         'description'   => $popis,
+        'image'         => $obrazek !== '' ? $obrazek : SITE_URL . '/assets/img/logo.png',
         'mainEntityOfPage' => $url,
         'author'        => [
             '@type' => 'Person',

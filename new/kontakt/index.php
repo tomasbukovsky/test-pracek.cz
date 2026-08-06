@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/inc/config.php';
 require_once dirname(__DIR__) . '/inc/functions.php';
 
 $page_title       = 'Kontakt | ' . SITE_NAME;
-$page_description = 'Kontaktní údaje na provozovatele webu ' . SITE_NAME . '.';
+$page_description = 'Kontaktní údaje na provozovatele webu ' . SITE_NAME . '. Nahlaste chybu, nesrovnalost v parametrech nebo pošlete vlastní zkušenost s pračkou.';
 $page_canonical   = SITE_URL . '/kontakt/';
 $schema_json      = schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],
@@ -31,7 +31,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
   </p>
 
   <ul>
-    <li><strong>Provozovatel:</strong> <?= htmlspecialchars(AUTOR_JMENO, ENT_QUOTES, 'UTF-8') ?></li>
+    <li><strong>Provozovatel:</strong> <?= htmlspecialchars(PROVOZOVATEL_JMENO, ENT_QUOTES, 'UTF-8') ?></li>
     <li><strong>E-mail:</strong> <a href="mailto:<?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?></a></li>
   </ul>
 

@@ -5,7 +5,7 @@ require_once dirname(__DIR__) . '/inc/functions.php';
 $page_title       = 'Energetické třídy praček vysvětlené: jak číst štítek (EPREL)';
 $page_description = 'Co znamená energetická třída A–G u pračky, jak číst energetický štítek a kde ověřit oficiální hodnoty v registru EPREL.';
 $page_canonical   = SITE_URL . '/energeticke-tridy-pracek/';
-$page_og_image    = SITE_URL . '/assets/img/og-energeticke-tridy-pracek.jpg';
+$page_og_image    = SITE_URL . '/assets/img/logo.png';
 $schema_json      = schema_article($page_title, $page_description, $page_canonical)
                   . schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],

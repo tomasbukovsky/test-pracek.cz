@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/inc/config.php';
 require_once dirname(__DIR__) . '/inc/functions.php';
 
 $page_title       = 'O nás: kdo stojí za test-pracek.cz';
-$page_description = 'Kdo je autorem webu test-pracek.cz, proč vznikl a jak pracuje s uživatelskými recenzemi a nezávislými testy praček.';
+$page_description = 'Kdo je autorem webu test-pracek.cz, proč vznikl a jak pracuje s parametry a nezávislými testy praček.';
 $page_canonical   = SITE_URL . '/o-nas/';
 
 $person_schema = [
@@ -52,10 +52,11 @@ require_once dirname(__DIR__) . '/inc/header.php';
 
   <h2>Čím se zabývám</h2>
   <p>
-    Sleduji uživatelská hodnocení praček na Alze a Heurece a výsledky nezávislých testů (dTest,
-    Stiftung Warentest) a z opakujících se vzorců sestavuji přehledy, které mají lidem ušetřit
-    čas strávený čtením stovek jednotlivých recenzí. Technické parametry (energetická třída,
-    spotřeba, hlučnost) přebírám výhradně z veřejného registru EPREL, nikdy je neodhaduji.
+    Sleduji výsledky nezávislých testů (dTest, Stiftung Warentest) a sbírám reálné zkušenosti
+    od zákazníků, kteří mi je pošlou (viz <a href="<?= url('/kontakt/') ?>">kontakt</a>) — dokud
+    jich není dost na poctivou agregaci, píšu to na stránce produktu na rovinu. Technické parametry
+    (energetická třída, spotřeba, hlučnost) přebírám výhradně z veřejného registru EPREL, nikdy je
+    neodhaduji.
   </p>
 
   <h2>Proč tento web existuje</h2>
@@ -74,11 +75,11 @@ require_once dirname(__DIR__) . '/inc/header.php';
     na stránce <a href="<?= url('/affiliate-informace/') ?>">Informace o spolupráci</a>.
   </p>
 
-  <h2>Fakturační údaje</h2>
+  <h2>Fakturační údaje (provozovatel)</h2>
   <ul>
-    <li><strong>Jméno:</strong> <?= htmlspecialchars(AUTOR_JMENO, ENT_QUOTES, 'UTF-8') ?></li>
-    <?php if (AUTOR_ICO !== ''): ?>
-    <li><strong>IČO:</strong> <?= htmlspecialchars(AUTOR_ICO, ENT_QUOTES, 'UTF-8') ?></li>
+    <li><strong>Jméno:</strong> <?= htmlspecialchars(PROVOZOVATEL_JMENO, ENT_QUOTES, 'UTF-8') ?></li>
+    <?php if (PROVOZOVATEL_ICO !== ''): ?>
+    <li><strong>IČO:</strong> <?= htmlspecialchars(PROVOZOVATEL_ICO, ENT_QUOTES, 'UTF-8') ?></li>
     <?php endif; ?>
     <li><strong>Kontakt:</strong> <a href="mailto:<?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?></a></li>
   </ul>

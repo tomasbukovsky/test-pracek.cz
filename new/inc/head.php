@@ -53,7 +53,7 @@
       "@id": "<?= SITE_URL ?>/#website",
       "url": "<?= SITE_URL ?>/",
       "name": "<?= SITE_NAME ?>",
-      "description": "Nezávislá agregace testů a recenzí praček"
+      "description": "Nezávislé srovnání praček podle ověřených parametrů a nezávislých testů"
     },
     {
       "@type": "Organization",

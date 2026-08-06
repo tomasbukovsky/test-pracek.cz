@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/inc/config.php';
 require_once dirname(__DIR__) . '/inc/functions.php';
 
 $page_title       = 'Informace o spolupráci s e-shopy | ' . SITE_NAME;
-$page_description = 'Jak funguje spolupráce webu ' . SITE_NAME . ' s partnerskými e-shopy a proč neovlivňuje hodnocení produktů.';
+$page_description = 'Jak funguje spolupráce webu ' . SITE_NAME . ' s partnerskými e-shopy, jak odkazy poznáte a proč neovlivňují hodnocení ani pořadí produktů.';
 $page_canonical   = SITE_URL . '/affiliate-informace/';
 $schema_json      = schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],
@@ -44,14 +44,14 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2>Ovlivňuje provize hodnocení produktů?</h2>
   <p>
     Ne. To, který model se objeví na jaké pozici v žebříčku a jak je v textu popsaný, vychází výhradně
-    z postupu popsaného v <a href="<?= url('/metodika/') ?>">metodice</a> — z agregace uživatelských
-    recenzí, nezávislých testů a parametrů z registru EPREL. Výše provize u konkrétního produktu
+    z postupu popsaného v <a href="<?= url('/metodika/') ?>">metodice</a> — z ověřených parametrů
+    registru EPREL, orientační ceny a nezávislých testů. Výše provize u konkrétního produktu
     tento proces nijak neovlivňuje a neexistuje žádná forma placeného zvýhodnění pozice v žebříčku.
   </p>
 
   <h2>Kdo je provozovatelem</h2>
   <p>
-    Provozovatelem webu a příjemcem provizí z partnerských programů je <?= htmlspecialchars(AUTOR_JMENO, ENT_QUOTES, 'UTF-8') ?>.
+    Provozovatelem webu a příjemcem provizí z partnerských programů je <?= htmlspecialchars(PROVOZOVATEL_JMENO, ENT_QUOTES, 'UTF-8') ?>.
     Kontaktní údaje najdete na stránce <a href="<?= url('/kontakt/') ?>">Kontakt</a>.
   </p>
 

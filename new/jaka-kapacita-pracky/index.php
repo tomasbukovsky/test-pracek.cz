@@ -5,7 +5,7 @@ require_once dirname(__DIR__) . '/inc/functions.php';
 $page_title       = 'Jaká kapacita pračky je vhodná? 7, 8, 9 nebo 10 kg';
 $page_description = 'Kolik kg kapacity pračky potřebujete podle počtu osob v domácnosti. Přehled s odkazy na srovnání konkrétních modelů 7–10 kg.';
 $page_canonical   = SITE_URL . '/jaka-kapacita-pracky/';
-$page_og_image    = SITE_URL . '/assets/img/og-jaka-kapacita-pracky.jpg';
+$page_og_image    = SITE_URL . '/assets/img/logo.png';
 $schema_json      = schema_article($page_title, $page_description, $page_canonical)
                   . schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],

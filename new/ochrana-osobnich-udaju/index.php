@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/inc/config.php';
 require_once dirname(__DIR__) . '/inc/functions.php';
 
 $page_title       = 'Ochrana osobních údajů a cookies | ' . SITE_NAME;
-$page_description = 'Jaké osobní údaje web ' . SITE_NAME . ' zpracovává, jak používá cookies a Google Analytics 4.';
+$page_description = 'Jaké osobní údaje web ' . SITE_NAME . ' zpracovává, jak používá cookies a Google Analytics 4 a jaká máte práva podle GDPR.';
 $page_canonical   = SITE_URL . '/ochrana-osobnich-udaju/';
 $schema_json      = schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],

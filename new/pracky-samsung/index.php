@@ -1,13 +1,13 @@
 <?php
 $segment_slug     = 'pracky-samsung';
-$segment_h1       = 'Pračky Samsung: srovnání a recenze 2026';
-$page_title       = 'Pračky Samsung 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček Samsung na českém trhu. Parametry z EPREL, agregace hodnocení zákazníků z Alzy a Heureky.';
+$segment_h1       = 'Pračky Samsung: srovnání a parametry 2026';
+$page_title       = 'Pračky Samsung 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček Samsung na českém trhu. Parametry z registru EPREL a feedu prodejce.';
 
 $segment_intro = '
-<p>Samsung nabízí jedny z nejdostupnějších praček na českém trhu. Zákazníci na Alze a Heurece nejčastěji chválí <strong>příznivý poměr ceny a kapacity</strong> — modely Samsung bývají v daném kapacitním segmentu levnější než srovnatelné AEG nebo Bosch.</p>
-<p>Technologicky Samsung staví na <strong>digitálním invertoru</strong> (Digital Inverter Technology), na který poskytuje 11letou záruku na motor. Prémiová řada je doplněna o Wi-Fi ovládání přes aplikaci SmartThings.</p>
-<p>Výhrada, která se v hodnoceních zákazníků u Samsungu nejčastěji opakuje, je <strong>hlučnost při odstřeďování</strong> — zejména u modelů se třídou C, kde se hodnoty pohybují kolem 76–78 dB, což je o něco více než srovnatelné tiché modely LG nebo AEG. Třída C je u Samsungu v nižším segmentu cenou za nízkou pořizovací cenu.</p>
+<p>Samsung nabízí jedny z nejdostupnějších praček v katalogu — v přepočtu na kapacitu často levnější než AEG, Bosch nebo LG ve srovnatelné třídě.</p>
+<p>Technologicky Samsung staví na <strong>digitálním invertoru</strong> (Digital Inverter Technology), na který výrobce udává 11letou záruku na motor. Prémiová řada je doplněná o Wi-Fi ovládání přes aplikaci SmartThings.</p>
+<p>Technické parametry (hlučnost, přesná spotřeba) EPREL u modelů Samsung v katalogu zatím nemá evidované k nezávislému ověření — vycházejí prozatím jen z podkladů dodavatele.</p>
 <p>Parametry pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
@@ -17,8 +17,8 @@ $faq_items = [
     'a' => 'Digital Inverter je označení pro invertorový motor bez kartáčů, který reguluje otáčky plynule podle zátěže. Samsung na tento motor poskytuje záruku 11 let (podmínky u konkrétního modelu ověřte u prodejce).',
   ],
   [
-    'q' => 'Jsou pračky Samsung hlučnější než Bosch nebo LG?',
-    'a' => 'V průměru mírně ano — zejména u modelů třídy C bývá hlučnost při odstřeďování 76–78 dB, zatímco srovnatelné LG s přímým pohonem dosahují 70–72 dB. V hodnoceních zákazníků je to nejčastěji zmiňovaný rozdíl.',
+    'q' => 'Jsou pračky Samsung v katalogu dražší než Bosch nebo LG?',
+    'a' => 'Naopak — modely Samsung bývají v katalogu ve srovnatelné kapacitě obvykle levnější než Bosch nebo LG. Přesné porovnání najdete v tabulce výše, kde jsou všechny modely řazené podle ceny.',
   ],
   [
     'q' => 'Je aplikace SmartThings nutná pro používání Samsung pračky?',

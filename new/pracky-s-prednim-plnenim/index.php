@@ -1,8 +1,8 @@
 <?php
 $segment_slug     = 'pracky-s-prednim-plnenim';
 $segment_h1       = 'Pračky s předním plněním: srovnání 2026';
-$page_title       = 'Pračky s předním plněním 2026: srovnání a recenze';
-$page_description = 'Přehled praček s předním plněním — nejrozšířenější typ v ČR. Srovnání parametrů, recenze zákazníků, doporučení.';
+$page_title       = 'Pračky s předním plněním 2026: srovnání a parametry';
+$page_description = 'Přehled praček s předním plněním — nejrozšířenější typ v ČR. Srovnání parametrů a doporučení podle použití.';
 
 $segment_intro = '
 <p>Pračky s <strong>předním plněním</strong> jsou v České republice naprosto dominantní — tvoří přes 90 % prodejů. Buben se plní dveřmi na čelní straně přístroje. Oproti hornímu plnění mají obecně <strong>nižší spotřebu vody a energie</strong> (méně vody je potřeba k namočení prádla, buben ho zvedá a spouští místo míchání), lepší výsledky praní delikátních tkanin a jsou vhodné pro zabudování pod pracovní desku.</p>

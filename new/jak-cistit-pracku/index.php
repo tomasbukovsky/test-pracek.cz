@@ -5,7 +5,7 @@ require_once dirname(__DIR__) . '/inc/functions.php';
 $page_title       = 'Jak čistit pračku: údržba bubnu, těsnění a zásobníku';
 $page_description = 'Jak a jak často čistit pračku, aby nezapáchala a vydržela déle. Čištění bubnu, gumového těsnění, zásobníku na prací prostředky a odvápnění.';
 $page_canonical   = SITE_URL . '/jak-cistit-pracku/';
-$page_og_image    = SITE_URL . '/assets/img/og-jak-cistit-pracku.jpg';
+$page_og_image    = SITE_URL . '/assets/img/logo.png';
 $schema_json      = schema_article($page_title, $page_description, $page_canonical)
                   . schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],
@@ -79,10 +79,9 @@ require_once dirname(__DIR__) . '/inc/header.php';
   </ul>
 
   <p>
-    Dodržování těchto kroků prodlužuje životnost pračky a snižuje riziko poruch, na které si
-    uživatelé v recenzích nejčastěji stěžují (zápach, ucpaný filtr, plíseň na těsnění). Při
-    výběru nové pračky proto stojí za to sledovat i to, jak snadno je zásobník a filtr přístupný —
-    tuto informaci najdete u jednotlivých modelů v sekcích „Co říkají uživatelé".
+    Dodržování těchto kroků prodlužuje životnost pračky a snižuje riziko běžných poruch souvisejících
+    se zanedbanou údržbou — zápachu, ucpaného filtru nebo plísně na těsnění. Při výběru nové pračky
+    proto stojí za to sledovat i to, jak snadno je zásobník a filtr přístupný.
   </p>
 
   <?php require_once dirname(__DIR__) . '/inc/components/disclosure.php'; ?>

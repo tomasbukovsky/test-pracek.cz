@@ -41,10 +41,10 @@ require_once dirname(__DIR__) . '/inc/header.php';
 
   <h2>2. Ze kterých zdrojů čerpáme</h2>
   <ul>
-    <li><strong>Uživatelská hodnocení e-shopů</strong> (Alza, Heureka) — agregujeme opakující se vzorce z desítek až stovek recenzí u konkrétního modelu. Nikdy nekopírujeme recenze doslova; krátký citát v uvozovkách používáme maximálně jeden na produkt, vždy s uvedením zdroje.</li>
+    <li><strong>Registr EPREL</strong> (Evropský registr energetických štítků, <a href="https://eprel.ec.europa.eu" rel="noopener noreferrer" target="_blank">eprel.ec.europa.eu</a>) — odtud pocházejí technické parametry: energetická třída, spotřeba energie a vody, hlučnost, třída odstřeďování. U modelů, kde se nám záznam v EPREL zatím nepodařilo dohledat, to na stránce produktu otevřeně uvádíme.</li>
     <li><strong>dTest</strong> a <strong>Stiftung Warentest</strong> — pokud pro model existuje nezávislý test, uvádíme pouze fakt, že test proběhl, kdy a jak produkt dopadl v celkovém hodnocení, s odkazem na originál. Nikdy nereprodukujeme dílčí známky ani placený obsah.</li>
-    <li><strong>Registr EPREL</strong> (Evropský registr energetických štítků, <a href="https://eprel.ec.europa.eu" rel="noopener noreferrer" target="_blank">eprel.ec.europa.eu</a>) — odtud pocházejí všechny technické parametry: energetická třída, spotřeba energie a vody, hlučnost, třída odstřeďování.</li>
     <li><strong>Feed partnerského e-shopu</strong> — dostupnost a orientační cena, vždy s datem, kdy byla naposledy ověřena.</li>
+    <li><strong>Uživatelská hodnocení</strong> — reálné recenze od zákazníků teprve sbíráme (viz stránka <a href="<?= url('/kontakt/') ?>">Kontakt</a>). Dokud jich nemáme dost, sekce k jednotlivým produktům otevřeně píší, že hodnocení chybí, místo aby předstíraly agregaci, kterou nemáme.</li>
   </ul>
   <p>
     Pokud pro produkt zdroje nestačí, píšeme kratší stránku. Chybějící informace nikdy nedoplňujeme
@@ -54,10 +54,9 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2>3. Jak vzniká pořadí v žebříčcích (TOP 3, TOP 8)</h2>
   <p>
     Žebříčky na tomto webu <strong>nejsou postavené na vlastním testování ani na váženém skóre</strong>.
-    Pořadí vychází z toho, jak často a jak pozitivně se model objevuje napříč agregovanými
-    uživatelskými recenzemi, v kombinaci s tím, zda pro něj existuje nezávislý test (dTest,
-    Stiftung Warentest). Segmentové přehledy dále řadíme podle orientační ceny, aby bylo srovnání
-    přehledné bez ohledu na subjektivní pořadí.
+    Dokud nemáme dost reálných recenzí na to, abychom mohli poctivě řadit podle skutečné obliby,
+    řadíme modely podle <strong>orientační ceny</strong> — je to jediné kritérium, které je transparentní
+    a ověřitelné bez ohledu na to, kolik hodnocení pro daný model zatím máme.
   </p>
   <p>
     Na webu nikdy nenajdete strukturovaná data typu <code>Review</code>, <code>AggregateRating</code>
@@ -68,9 +67,8 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2>4. Jak často se obsah aktualizuje</h2>
   <p>
     Datum poslední aktualizace je uvedené v patičce každé stránky a v autorském boxu. Parametry
-    z EPREL a ceny z feedu prodejce procházíme kontrolou průběžně; sekce s recenzemi aktualizujeme,
-    když se v agregovaných hodnoceních objeví nový výrazný vzorec (nová opakující se výtka nebo
-    pochvala).
+    z EPREL a ceny z feedu prodejce procházíme kontrolou průběžně; jakmile od zákazníků nasbíráme
+    reálné recenze ke konkrétnímu modelu, doplníme je a přepočítáme i pořadí v žebříčcích.
   </p>
 
   <h2>5. Jak web vydělává a proč to neovlivňuje hodnocení</h2>

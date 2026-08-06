@@ -12,7 +12,7 @@
       <th scope="col">Kapacita</th>
       <th scope="col">Otáčky</th>
       <th scope="col">En. třída</th>
-      <th scope="col">Hlučnost</th>
+      <th scope="col">Hlučnost (praní)</th>
       <th scope="col">Orient. cena</th>
       <th scope="col">Koupit</th>
     </tr>
@@ -26,11 +26,11 @@
       <td><?= (int)$p['kapacita'] ?> kg</td>
       <td><?= (int)$p['otacky'] ?> ot./min</td>
       <td><?= htmlspecialchars($p['energ_trida'], ENT_QUOTES, 'UTF-8') ?></td>
-      <td><?= (int)$p['hlucnost_odstred'] ?> dB</td>
+      <td><?= (int)$p['hlucnost_prani'] ?> dB</td>
       <td>
         <?php if ($p['cena_orient']): ?>
           <?= number_format((int)$p['cena_orient'], 0, ',', ' ') ?> Kč
-          <small class="cena-datum">(k <?= htmlspecialchars($p['cena_datum'], ENT_QUOTES, 'UTF-8') ?>)</small>
+          <small class="cena-datum">(k <?= htmlspecialchars(datum_cz_cisly($p['cena_datum']), ENT_QUOTES, 'UTF-8') ?>)</small>
         <?php else: ?>
           —
         <?php endif; ?>

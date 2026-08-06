@@ -14,8 +14,8 @@ if (!$p) { http_response_code(404); require dirname(__DIR__) . '/404.php'; exit;
 
 $breadcrumb_segment = hlavni_segment($p);
 
-$page_title       = $p['nazev'] . ': recenze, parametry a zkušenosti uživatelů';
-$page_description = 'Co říkají uživatelé na Alze a Heurece o pračce ' . $p['nazev'] . '? Parametry z registru EPREL, klady, zápory a srovnání s alternativami.';
+$page_title       = $p['nazev'] . ': technické parametry a cena';
+$page_description = 'Ověřené parametry pračky ' . $p['nazev'] . ' z registru EPREL — kapacita, energetická třída, hlučnost. Klady, zápory a srovnání s podobnými modely.';
 $page_canonical   = SITE_URL . '/' . $p['slug'] . '/';
 $page_og_image    = $p['obrazek'];
 
@@ -80,7 +80,6 @@ $alternativy = produkt_alternativy($p, 2);
           <tr><th scope="row">Spotřeba energie</th><td><?= (int)$p['spotreba_kwh'] ?> kWh<?= $p['typ'] === 'susicka' ? ' / rok' : ' / 100 cyklů' ?></td></tr>
           <tr><th scope="row">Třída odstřeďování</th><td><?= htmlspecialchars($p['trida_odstred'], ENT_QUOTES, 'UTF-8') ?></td></tr>
           <tr><th scope="row">Hlučnost (praní)</th><td><?= (int)$p['hlucnost_prani'] ?> dB</td></tr>
-          <tr><th scope="row">Hlučnost (odstřeďování)</th><td><?= (int)$p['hlucnost_odstred'] ?> dB</td></tr>
           <tr><th scope="row">Rozměry (Š × H × V)</th><td><?= (int)$p['sirka'] ?> × <?= (int)$p['hloubka'] ?> × <?= (int)$p['vyska'] ?> cm</td></tr>
           <tr><th scope="row">Typ motoru</th><td><?= htmlspecialchars($p['motor'], ENT_QUOTES, 'UTF-8') ?></td></tr>
           <tr><th scope="row">Wi-Fi</th><td><?= $p['wifi'] ? 'Ano' : 'Ne' ?></td></tr>
@@ -97,7 +96,6 @@ $alternativy = produkt_alternativy($p, 2);
       <p>
         <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--lg">Koupit →</a>
       </p>
-      <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte provoz webu.</small></p>
     </div>
   </div>
 
@@ -107,26 +105,24 @@ $alternativy = produkt_alternativy($p, 2);
        3. CO ŘÍKAJÍ UŽIVATELÉ
        ================================================================ -->
   <section aria-labelledby="recenze-heading">
-    <h2 id="recenze-heading">Co říkají uživatelé</h2>
+    <h2 id="recenze-heading">Shrnutí modelu</h2>
 
     <p class="text-muted"><small>
-      Tato sekce je agregací hodnocení zákazníků ze zdrojů:
-      <?= htmlspecialchars(implode(', ', $p['recenze_zdroje']), ENT_QUOTES, 'UTF-8') ?>.
-      <?php if (!empty($p['recenze_pocet']) && $p['recenze_pocet'] > 0): ?>
-        Čerpáno z <?= (int)$p['recenze_pocet'] ?> hodnocení.
-      <?php endif; ?>
-      Žádné hodnocení není doslova přebíráno — popisujeme opakující se vzorce.
+      K tomuto modelu zatím nemáme žádné reálné hodnocení od zákazníků — sekce níže vychází
+      z ověřených technických parametrů, ne z recenzí. Vlastníte tuhle pračku? Napište nám na
+      <a href="mailto:<?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?>?subject=<?= rawurlencode('Recenze: ' . $p['nazev']) ?>">
+        <?= htmlspecialchars(AUTOR_EMAIL, ENT_QUOTES, 'UTF-8') ?>
+      </a> — vaši zkušenost rádi doplníme.
     </small></p>
 
-    <h3>Co uživatelé nejčastěji chválí</h3>
     <p><?= htmlspecialchars($p['recenze_shrnuti'], ENT_QUOTES, 'UTF-8') ?></p>
     <?php if (!empty($p['pro'])): ?>
-    <p>Mezi opakovaně zmiňované přednosti v recenzích dále patří: <?= htmlspecialchars(implode('; ', $p['pro']), ENT_QUOTES, 'UTF-8') ?>.</p>
+    <p>Mezi hlavní přednosti patří: <?= htmlspecialchars(implode('; ', $p['pro']), ENT_QUOTES, 'UTF-8') ?>.</p>
     <?php endif; ?>
 
-    <h3>Nejčastější výhrady</h3>
+    <h3>Na co si dát pozor</h3>
     <?php if (!empty($p['proti'])): ?>
-    <p>Napříč recenzemi se jako nejčastější výhrady opakují: <?= htmlspecialchars(implode('; ', $p['proti']), ENT_QUOTES, 'UTF-8') ?>.</p>
+    <p><?= htmlspecialchars(implode('; ', $p['proti']), ENT_QUOTES, 'UTF-8') ?>.</p>
     <?php endif; ?>
 
     <h3>Pro koho se hodí</h3>
@@ -166,7 +162,6 @@ $alternativy = produkt_alternativy($p, 2);
         <tr><th scope="row">Roční spotřeba vody</th><td><?= number_format((int)$p['spotreba_vody'], 0, ',', ' ') ?> l</td></tr>
         <tr><th scope="row">Třída účinnosti odstřeďování</th><td><?= htmlspecialchars($p['trida_odstred'], ENT_QUOTES, 'UTF-8') ?></td></tr>
         <tr><th scope="row">Hlučnost při praní</th><td><?= (int)$p['hlucnost_prani'] ?> dB(A) re 1 pW</td></tr>
-        <tr><th scope="row">Hlučnost při odstřeďování</th><td><?= (int)$p['hlucnost_odstred'] ?> dB(A) re 1 pW</td></tr>
       </tbody>
     </table>
   </section>
@@ -222,8 +217,7 @@ $alternativy = produkt_alternativy($p, 2);
        ================================================================ -->
   <?php
   $faq_hlucnost_prani   = (int)$p['hlucnost_prani'];
-  $faq_hlucnost_odstred = (int)$p['hlucnost_odstred'];
-  $faq_cena_datum       = htmlspecialchars(datum_cz($p['cena_datum']), ENT_QUOTES, 'UTF-8');
+  $faq_cena_datum       = htmlspecialchars(datum_cz_cisly($p['cena_datum']), ENT_QUOTES, 'UTF-8');
   $faq_alza_url         = htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8');
   $faq_nazev            = htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8');
 
@@ -234,7 +228,7 @@ $alternativy = produkt_alternativy($p, 2);
     ],
     [
       'q' => "Je {$faq_nazev} vhodná do paneláku?",
-      'a' => "Hlučnost při praní {$faq_hlucnost_prani} dB a při odstřeďování {$faq_hlucnost_odstred} dB (podle deklarace EPREL) je orientačním vodítkem pro posouzení, zda pračka bude v bytovém domě rušit sousedy. Nižší hodnoty obecně znamenají tišší provoz. Pro instalaci v paneláku je vhodné také ověřit rozměry a umístění přívodu vody a odpadu.",
+      'a' => "Hlučnost při praní {$faq_hlucnost_prani} dB (podle deklarace EPREL) je orientačním vodítkem pro posouzení, zda pračka bude v bytovém domě rušit sousedy. Nižší hodnoty obecně znamenají tišší provoz. Pro instalaci v paneláku je vhodné také ověřit rozměry a umístění přívodu vody a odpadu.",
     ],
     [
       'q' => "Kde najdu aktuální cenu {$faq_nazev}?",

@@ -1,19 +1,19 @@
 <?php
 $segment_slug     = 'pracky-whirlpool';
-$segment_h1       = 'Pračky Whirlpool: srovnání a recenze 2026';
-$page_title       = 'Pračky Whirlpool 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček Whirlpool na českém trhu. Parametry z EPREL, recenze zákazníků z Alzy. Modely s předním i horním plněním.';
+$segment_h1       = 'Pračky Whirlpool: srovnání a parametry 2026';
+$page_title       = 'Pračky Whirlpool 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček Whirlpool na českém trhu. Ověřené parametry z registru EPREL. Modely s předním i horním plněním.';
 
 $segment_intro = '
-<p>Whirlpool je jedním z největších výrobců spotřebičů na světě a na českém trhu nabízí pračky v širokém cenovém rozsahu. Charakteristickým prvkem je technologie <strong>6th Sense</strong>, která automaticky přizpůsobuje program podle náplně — délku cyklu, množství vody i teplotu. Zákazníci ji v recenzích zmiňují jako reálně fungující funkci, nikoli jen marketingovou zkratku.</p>
-<p>Portfolio Whirlpool zahrnuje jak pračky s <strong>předním plněním</strong>, tak tradiční <strong>s horním plněním</strong> (šíře 40 cm) — ty jsou oblíbené v malých koupelnách, kde není přístup k pračce zepředu. V hodnoceních zákazníků se jako výhoda horního plnění opakuje možnost přidat kus prádla kdykoli během cyklu.</p>
-<p>Výhrada, která se v recenzích Whirlpool opakuje, je občasná hlučnost u starších modelů a větší hloubka kabiny (kolem 60–61 cm) u přednoplnících modelů. Parametry níže pocházejí z EPREL a feedu prodejce.</p>
+<p>Whirlpool je jedním z největších výrobců spotřebičů na světě a v katalogu nabízí pračky v širokém cenovém rozsahu. Charakteristickým prvkem je technologie <strong>6th Sense</strong>, která podle výrobce automaticky přizpůsobuje délku cyklu, množství vody i teplotu podle náplně bubnu.</p>
+<p>Portfolio Whirlpool v katalogu zahrnuje jak pračky s <strong>předním plněním</strong>, tak modely <strong>s horním plněním</strong> (šíře 40 cm) — podrobnosti k principu horního plnění najdete na stránce <a href="' . url('/pracky-s-hornim-plnenim/') . '">Pračky s horním plněním</a>.</p>
+<p>Parametry níže pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
 $faq_items = [
   [
     'q' => 'Co je technologie 6th Sense u praček Whirlpool?',
-    'a' => 'Technologie 6th Sense automaticky detekuje množství a typ prádla a upravuje délku cyklu, spotřebu vody a teplotu. Cílem je šetřit energii a vodu při zachování výsledku praní. Zákazníci tuto funkci v recenzích hodnotí kladně, zejména při nestandardních náplních.',
+    'a' => 'Technologie 6th Sense podle výrobce automaticky detekuje množství a typ prádla a upravuje délku cyklu, spotřebu vody a teplotu — cílem je šetřit energii a vodu při zachování výsledku praní.',
   ],
   [
     'q' => 'Jsou pračky Whirlpool s horním plněním vhodné pro každou domácnost?',
@@ -21,7 +21,7 @@ $faq_items = [
   ],
   [
     'q' => 'Má Whirlpool servisní síť v České republice?',
-    'a' => 'Ano. Whirlpool provozuje autorizovanou servisní síť, případně je možné kontaktovat servis přes zákaznickou linku. Dostupnost náhradních dílů je v recenzích hodnocena průměrně — pro srovnání je servisní dostupnost u Bosch nebo Miele hodnocena lépe.',
+    'a' => 'Ano. Whirlpool provozuje autorizovanou servisní síť, případně je možné kontaktovat servis přes zákaznickou linku. Přesnou dostupnost dílů pro konkrétní model doporučujeme ověřit přímo u výrobce nebo prodejce.',
   ],
 ];
 

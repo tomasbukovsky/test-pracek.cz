@@ -1,28 +1,28 @@
 <?php
 $segment_slug     = 'pracky-beko';
-$segment_h1       = 'Pračky Beko: srovnání a recenze 2026';
-$page_title       = 'Pračky Beko 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček Beko na českém trhu. Nejlepší poměr ceny a výkonu? Parametry z EPREL, recenze zákazníků z Alzy a Heureky.';
+$segment_h1       = 'Pračky Beko: srovnání a parametry 2026';
+$page_title       = 'Pračky Beko 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček Beko na českém trhu. Nejlepší poměr ceny a výkonu? Ověřené parametry z registru EPREL.';
 
 $segment_intro = '
-<p>Beko je turecká značka (součást Arçelik Group) a na českém trhu ji zákazníci na Alze a Heurece hodnotí primárně jako <strong>nejdostupnější volbu</strong> s přijatelnými parametry. Hlavní výhoda Beka je jasná: kapacity, které u prémiových značek stojí výrazně více, jsou u Beka dostupné za nižší cenu.</p>
-<p>Technologickým základem je motor <strong>ProSmart Invertor</strong>, na který Beko poskytuje 10letou záruku na motor. Ve třídě B i třídě C Beko nabízí modely ve všech hlavních kapacitách (7, 8, 9, 10 kg) i specifické typy — vestavné provedení a úzké pračky (45 cm).</p>
-<p>Výhradou zákazníků je <strong>vyšší hlučnost při praní</strong> (49–50 dB oproti 44–47 dB u tišší konkurence) a v nižším segmentu také nižší maximální otáčky (1 000 ot./min), což znamená mokřejší prádlo po vyprání. Beko je dobrou volbou tam, kde cena rozhoduje nad ostatními parametry.</p>
+<p>Beko je turecká značka (součást Arçelik Group) a v katalogu jde primárně o <strong>nejdostupnější volbu</strong> s přijatelnými parametry — kapacity, které u prémiových značek stojí výrazně více, jsou u Beka dostupné za nižší cenu.</p>
+<p>Technologickým základem je motor <strong>EnergySpin</strong>, který Beko používá napříč celou řadou v katalogu. Modely pokrývají kapacity 7–9 kg, včetně vestavného provedení.</p>
+<p>Podle ověřených dat z EPREL má Beko v katalogu hlučnost při praní 70–76 dB a hloubku 50–55 cm — mělčí konstrukci než většina konkurence (60+ cm), což se hodí do menších koupelen.</p>
 <p>Parametry pocházejí z EPREL a feedu prodejce. Ceny jsou orientační.</p>
 ';
 
 $faq_items = [
   [
     'q' => 'Je Beko spolehlivá značka?',
-    'a' => 'Beko (Arçelik) je jeden z největších výrobců spotřebičů na světě. V hodnoceních zákazníků na Alze a Heurece se spolehlivost hodnotí průměrně — výrazně pod Bosch nebo AEG, ale srovnatelně s jinými střední třídou. Za výrazně nižší cenu je to akceptovatelný kompromis.',
+    'a' => 'Beko (Arçelik) je jeden z největších výrobců spotřebičů na světě — velikost výrobce ale sama o sobě nic neříká o spolehlivosti konkrétního modelu. Reálná data o poruchovosti nemáme k dispozici; jistotu dává hlavně zákonná 2letá záruka a u motoru EnergySpin prodloužená záruka výrobce (podmínky ověřte u prodejce).',
   ],
   [
-    'q' => 'Proč mají levné modely Beko jen 1 000 ot./min?',
-    'a' => 'Nižší otáčky jsou jedním z kompromisů v ceně. Při 1 000 ot./min bude prádlo po vyprání mokřejší než při 1 400 ot./min, což prodlužuje dobu schnutí nebo zatěžuje sušičku. Pokud sušíte prádlo v sušičce nebo na vyhřáté místnosti, rozdíl je menší. Pro prádlo sušené venku na šňůře je to znatelná nevýhoda.',
+    'q' => 'Proč mají některé modely Beko nižší otáčky?',
+    'a' => 'Nižší otáčky jsou jedním z kompromisů v ceně — v katalogu se u Beka pohybují od 1151 do 1400 ot./min. Nižší otáčky znamenají mokřejší prádlo po vyprání, což prodlužuje dobu schnutí nebo zatěžuje sušičku. Konkrétní hodnotu najdete u každého modelu v tabulce.',
   ],
   [
     'q' => 'Má Beko vestavné provedení pračky?',
-    'a' => 'Ano, Beko BWI 386D4 je vestavná verze 8kg pračky — výška 82 cm pro zabudování pod pracovní desku. Je to jedna z nejdostupnějších vestavných praček s třídou B na trhu.',
+    'a' => 'Ano, v katalogu najdete dva vestavné modely Beko — B3WBT671415W (7 kg) a B3WBT691415W (9 kg), oba s výškou 82 cm pro zabudování pod pracovní desku.',
   ],
 ];
 

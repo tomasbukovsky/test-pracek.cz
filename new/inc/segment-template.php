@@ -18,7 +18,9 @@ require_once dirname(__DIR__) . '/inc/functions.php';
 $produkty_segmentu = array_values(produkty_v_segmentu($segment_slug));
 
 $page_canonical = SITE_URL . '/' . $segment_slug . '/';
-$page_og_image  = SITE_URL . '/assets/img/og-' . $segment_slug . '.jpg';
+// Vlastní OG obrázky (og-<segment>.jpg) nemáme vyrobené - použijeme radši reálnou
+// fotku prvního produktu v segmentu než odkaz na neexistující soubor.
+$page_og_image  = !empty($produkty_segmentu) ? $produkty_segmentu[0]['obrazek'] : SITE_URL . '/assets/img/logo.png';
 $schema_json    = schema_itemlist($produkty_segmentu)
                 . schema_breadcrumb([
                     ['url' => '/', 'nazev' => 'Test praček 2026'],
@@ -59,15 +61,18 @@ $top3 = array_slice($produkty_segmentu, 0, 3);
   <section aria-labelledby="tabulka-heading">
     <h2 id="tabulka-heading">Přehled <?= htmlspecialchars(mb_strtolower($segment_h1), ENT_QUOTES, 'UTF-8') ?></h2>
     <p class="text-muted">Seřazeno podle orientační ceny. Parametry z EPREL a feedu prodejce. Ceny jsou orientační.</p>
-    <?php require dirname(__DIR__) . '/inc/components/product-table.php'; ?>
+    <?php
+    $produkty_pole = $produkty_segmentu;
+    require dirname(__DIR__) . '/inc/components/product-table.php';
+    ?>
   </section>
 
   <?php require_once dirname(__DIR__) . '/inc/components/disclosure.php'; ?>
 
   <!-- TOP 3 -->
   <section aria-labelledby="top3-heading">
-    <h2 id="top3-heading">TOP 3 doporučení</h2>
-    <p class="text-muted">Tři modely nejlépe hodnocené zákazníky v tomto segmentu. Hodnocení vychází z agregace recenzí, ne z vlastního testování.</p>
+    <h2 id="top3-heading">TOP 3 podle ceny</h2>
+    <p class="text-muted">Tři nejlevnější modely v tomto segmentu. Bez agregovaných recenzí zatím nelze řadit podle skutečné obliby (viz metodika) — cena je jediné transparentní kritérium.</p>
 
     <?php foreach ($top3 as $rank => $p): ?>
     <article class="top-item">
@@ -98,7 +103,7 @@ $top3 = array_slice($produkty_segmentu, 0, 3);
   </section>
   <?php endif; ?>
 
-  <p class="metodika-odkaz text-muted"><small>Hodnocení na tomto webu vychází z agregace uživatelských recenzí. <a href="<?= url('/metodika/') ?>">Přečtěte si naši metodiku</a>.</small></p>
+  <p class="metodika-odkaz text-muted"><small>Jak vznikají parametry a pořadí modelů na tomto webu, popisuje <a href="<?= url('/metodika/') ?>">naše metodika</a>.</small></p>
 
   <?php require_once dirname(__DIR__) . '/inc/components/author-box.php'; ?>
 

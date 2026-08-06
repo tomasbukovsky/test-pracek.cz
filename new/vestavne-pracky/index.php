@@ -1,13 +1,13 @@
 <?php
 $segment_slug     = 'vestavne-pracky';
 $segment_h1       = 'Vestavné pračky: srovnání 2026';
-$page_title       = 'Vestavná pračka 2026: srovnání modelů a recenze';
-$page_description = 'Přehled vestavných praček pro kuchyňské linky a skříně. Srovnání parametrů, recenze zákazníků, doporučení podle značky.';
+$page_title       = 'Vestavná pračka 2026: srovnání modelů podle parametrů';
+$page_description = 'Přehled vestavných praček pro kuchyňské linky a skříně. Srovnání parametrů a doporučení podle značky.';
 
 $segment_intro = '
 <p>Vestavné pračky jsou konstrukčně totožné s volně stojícími modely, ale mají <strong>upravenou výšku (82 cm)</strong> pro zabudování pod standardní pracovní desku nebo do skříně. Na čelní panel lze nainstalovat fasádu shodnou s ostatním nábytkem — přístroj pak zcela splyne s kuchyňskou linkou.</p>
 <p>Instalace vestavné pračky je náročnější než standardní: nutná je přesná příprava výklenku, přívod vody a odpad v místě instalace a v mnoha případech i odborná montáž. Výrobci ji zpravidla nedoporučují montovat svépomocí bez zkušeností.</p>
-<p>V hodnoceních zákazníků se jako nejčastěji citovaný důvod volby vestavné pračky uvádí <strong>estetika a diskrétní instalace</strong> — zejména v open-space bytech nebo kuchyních, kde by volně stojící pračka vizuálně rušila. Cena je ve srovnání se stejnými volně stojícími modely zpravidla o ~2 000–5 000 Kč vyšší.</p>
+<p>Hlavním důvodem volby vestavné pračky bývá <strong>estetika a diskrétní instalace</strong> — zejména v open-space bytech nebo kuchyních, kde by volně stojící pračka vizuálně rušila. Cena bývá ve srovnání s volně stojícími modely o něco vyšší, hlavně kvůli úpravě konstrukce a předního panelu pro montáž fasády.</p>
 ';
 
 $faq_items = [

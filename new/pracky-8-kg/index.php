@@ -1,13 +1,13 @@
 <?php
 $segment_slug     = 'pracky-8-kg';
-$segment_h1       = 'Pračky 8 kg: srovnání a recenze 2026';
-$page_title       = 'Pračky 8 kg 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček s kapacitou 8 kg — nejprodávanější kategorie. Srovnání parametrů z EPREL, recenze zákazníků, doporučení pro různé typy domácností.';
+$segment_h1       = 'Pračky 8 kg: srovnání a parametry 2026';
+$page_title       = 'Pračky 8 kg 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček s kapacitou 8 kg — nejprodávanější kategorie. Srovnání ověřených parametrů z registru EPREL, doporučení pro různé typy domácností.';
 
 $segment_intro = '
-<p>Pračky s kapacitou <strong>8 kg jsou nejprodávanější kategorií</strong> na českém trhu. Osmikilogový buben pojme prádlo pro 3–4 osoby a zároveň zvládne i větší kusy — přikrývky, záclony nebo sportovní vybavení. Proto ji volí jak rodiny, tak jednotlivci, kteří chtějí pere méně často s větší náplní.</p>
-<p>V kategorii 8 kg je výběr největší: jsou zde dostupné modely od nejdostupnějšího Beka (od ~9 000 Kč) přes střední třídu (Bosch, Samsung, Whirlpool) až po prémiové AEG (13 000–15 000 Kč). Energetická třída se v 8kg kategorii pohybuje od A (AEG L7FBE841E) po C (Samsung, Bosch WAN28020BY).</p>
-<p>Klíčové parametry pro rozhodování: <strong>hlučnost</strong> (rozsah 45–52 dB při praní — rozdíl je slyšitelný), <strong>hloubka</strong> (48–64 cm — zásadní pro malé koupelny) a <strong>energetická třída</strong>. Parametry z registru EPREL jsou v tabulce níže.</p>
+<p>Pračky s kapacitou <strong>8 kg jsou nejprodávanější kategorií</strong> na českém trhu. Osmikilogový buben pojme prádlo pro 3–4 osoby a zároveň zvládne i větší kusy — přikrývky, záclony nebo sportovní vybavení.</p>
+<p>V kategorii 8 kg je výběr největší: v katalogu najdete modely od nejdostupnějšího Beka (od 8 090 Kč) přes střední třídu (Bosch, LG, Electrolux) až po AEG LFR61842QC (15 990 Kč). Energetická třída se v 8kg kategorii v katalogu pohybuje od A (Bosch, LG, Beko, AEG) po B (Samsung).</p>
+<p>Podle ověřených dat z EPREL se hlučnost při praní v 8kg kategorii pohybuje mezi 71–76 dB a hloubka kabiny mezi 49–63 cm — LG má v této kapacitě nejmělčí provedení (49 cm), Bosch naopak nejhlubší (63 cm). Parametry z registru EPREL jsou v tabulce níže.</p>
 ';
 
 $faq_items = [
@@ -16,8 +16,8 @@ $faq_items = [
     'a' => 'Pračka 8 kg se doporučuje pro domácnosti <strong>3–4 osob</strong>. Je to nejuniverzálnější kapacita — zvládne jak praní prádla pro rodinu, tak velké kusy jako přikrývky nebo sportovní oblečení.',
   ],
   [
-    'q' => 'Jaký je rozdíl mezi pračkou 8 kg třídy A a třídy C?',
-    'a' => 'Třída A spotřebuje přibližně o 30–40 % méně energie než třída C (hodnoty závisí na konkrétním modelu a EPREL registru). Při průměrné spotřebě 200 cyklů ročně a ceně 5 Kč/kWh to může znamenat úsporu 100–300 Kč ročně — za kolik let se vyplatí, závisí na rozdílu cen modelů.',
+    'q' => 'Jaký je rozdíl mezi pračkou 8 kg třídy A a třídy B?',
+    'a' => 'Nižší třída (A) znamená nižší spotřebu energie na 100 pracích cyklů — konkrétní hodnotu v kWh najdete u každého modelu v tabulce parametrů, protože se liší model od modelu i v rámci stejné třídy. Při pravidelném praní se rozdíl za dobu životnosti pračky promítne do účtu za elektřinu.',
   ],
   [
     'q' => 'Proč mají vestavné pračky 8 kg výšku jen 82 cm?',

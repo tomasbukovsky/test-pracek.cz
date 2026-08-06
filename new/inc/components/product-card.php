@@ -23,7 +23,7 @@
       <dt>Kapacita</dt><dd><?= (int)$p['kapacita'] ?> kg</dd>
       <dt>Otáčky</dt><dd><?= (int)$p['otacky'] ?> ot./min</dd>
       <dt>Energetická třída</dt><dd><?= htmlspecialchars($p['energ_trida'], ENT_QUOTES, 'UTF-8') ?></dd>
-      <dt>Hlučnost (odstřed.)</dt><dd><?= (int)$p['hlucnost_odstred'] ?> dB</dd>
+      <dt>Hlučnost (praní)</dt><dd><?= (int)$p['hlucnost_prani'] ?> dB</dd>
     </dl>
     <p class="product-card__cena">
       <?= formatuj_cenu((int)$p['cena_orient'], $p['cena_datum']) ?>
@@ -32,6 +32,5 @@
       <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze</a>
       <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit</a>
     </div>
-    <p class="disclosure-inline"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte web.</small></p>
   </div>
 </article>

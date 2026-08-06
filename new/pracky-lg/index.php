@@ -1,19 +1,19 @@
 <?php
 $segment_slug     = 'pracky-lg';
-$segment_h1       = 'Pračky LG: srovnání a recenze 2026';
-$page_title       = 'Pračky LG 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Srovnání praček LG dostupných v ČR. Přehled parametrů z EPREL, agregace uživatelských recenzí z Alzy a Heureky. Žádné vlastní testování.';
+$segment_h1       = 'Pračky LG: srovnání a parametry 2026';
+$page_title       = 'Pračky LG 2026: srovnání modelů a parametry';
+$page_description = 'Srovnání praček LG dostupných v ČR. Přehled ověřených parametrů z registru EPREL. Žádné vlastní testování.';
 
 $segment_intro = '
-<p>LG patří k nejprodávanějším značkám praček v České republice. Klíčovou vlastností, která se opakovaně zmiňuje v hodnoceních zákazníků na Alze i Heurece, je technologie <strong>přímého pohonu</strong> (Direct Drive): motor je připojen přímo na buben bez řemenů, což snižuje hlučnost, vibrace a opotřebení. Na tento motor LG poskytuje <strong>10letou záruku</strong>.</p>
-<p>Modely LG pokrývají kapacitní rozsah od 7 do 10 kg a většina nabízí i Wi-Fi ovládání přes aplikaci ThinQ. V recenzích zákazníků se jako nejčastěji zmiňovaná výhoda uvádí tichý chod — zejména modely s přímým pohonem bývají hodnoceny jako jedny z nejtiššíchv dané kapacitní kategorii. Výhradou bývá nutnost registrace v aplikaci a občasné problémy s párováním přes Wi-Fi.</p>
+<p>LG patří k nejprodávanějším značkám praček v České republice. Charakteristickým prvkem je technologie <strong>přímého pohonu</strong> (Direct Drive): motor je připojen přímo na buben bez řemenů, což podle výrobce snižuje hlučnost, vibrace a opotřebení. Na tento motor LG poskytuje <strong>10letou záruku</strong>.</p>
+<p>Modely LG v katalogu pokrývají kapacitní rozsah od 8,5 do 10 kg, většina nabízí i Wi-Fi ovládání přes aplikaci ThinQ. Podle ověřených dat z registru EPREL mají modely LG v katalogu hlučnost při praní 71 dB a hloubku 48–57 cm — tedy spíš mělčí provedení než konkurence s hloubkou přes 60 cm.</p>
 <p>Níže najdete přehled všech modelů LG, které jsme zařadili do katalogu, seřazených podle orientační ceny. Parametry pocházejí z registru EPREL a feedu prodejce. Ceny jsou orientační k datu uvedenému v tabulce — aktuální cenu vždy ověřte u prodejce.</p>
 ';
 
 $faq_items = [
   [
     'q' => 'Je technologie přímého pohonu u LG lepší než klasický motor?',
-    'a' => 'Přímý pohon (Direct Drive) eliminuje přenosový řemen, což podle výrobce snižuje hlučnost a vibraci. Tato vlastnost se v uživatelských hodnoceních zmiňuje jako faktická výhoda — zejména při nočním praní. LG na tento typ motoru poskytuje 10letou záruku na motor (nikoli na celý přístroj).',
+    'a' => 'Přímý pohon (Direct Drive) eliminuje přenosový řemen, což podle výrobce snižuje hlučnost a vibrace. LG na tento typ motoru poskytuje 10letou záruku na motor (nikoli na celý přístroj).',
   ],
   [
     'q' => 'Jsou pračky LG s Wi-Fi nutně lepší než bez něj?',

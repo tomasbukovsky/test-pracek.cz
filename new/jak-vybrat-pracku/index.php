@@ -5,7 +5,7 @@ require_once dirname(__DIR__) . '/inc/functions.php';
 $page_title       = 'Jak vybrat pračku 2026: kompletní průvodce výběrem';
 $page_description = 'Kapacita, energetická třída, otáčky, typ plnění i motor — praktický průvodce výběrem pračky s odkazy na srovnání konkrétních modelů.';
 $page_canonical   = SITE_URL . '/jak-vybrat-pracku/';
-$page_og_image    = SITE_URL . '/assets/img/og-jak-vybrat-pracku.jpg';
+$page_og_image    = SITE_URL . '/assets/img/logo.png';
 $schema_json      = schema_article($page_title, $page_description, $page_canonical)
                   . schema_breadcrumb([
                       ['url' => '/', 'nazev' => 'Test praček 2026'],
@@ -31,9 +31,9 @@ require_once dirname(__DIR__) . '/inc/header.php';
     Výběr pračky se často zužuje na cenu a značku, ale parametry, které nejvíc ovlivní vaši každodenní
     spokojenost, jsou jinde: kapacita bubnu, energetická třída, otáčky při odstřeďování a typ plnění.
     Tento průvodce prochází jednotlivá kritéria v pořadí, v jakém dává smysl je řešit, a u každého
-    odkazuje na konkrétní srovnání modelů, které danému parametru vyhovují. Vychází z parametrů
-    v registru EPREL a z toho, co se opakovaně objevuje v recenzích zákazníků na Alze a Heurece —
-    ne z vlastního testování (více v <a href="<?= url('/metodika/') ?>">metodice</a>).
+    odkazuje na konkrétní srovnání modelů, které danému parametru vyhovují. Vychází z ověřených
+    parametrů v registru EPREL a z technických specifikací výrobců — ne z vlastního testování
+    (více v <a href="<?= url('/metodika/') ?>">metodice</a>).
   </p>
 
   <h2 id="kapacita">1. Kapacita: kolik kg prádla perete najednou</h2>
@@ -84,12 +84,12 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2 id="typ-plneni">4. Typ plnění: přední, nebo horní</h2>
   <p>
     Naprostá většina praček prodávaných v ČR má přední plnění — jsou širší v nabídce programů
-    a lépe se kombinují s vestavbou nebo sušičkou nad pračkou. Pračky s horním plněním jsou úzké
-    (typicky 40 cm) a umožňují přidat kus prádla i uprostřed cyklu, což některým uživatelům
-    v recenzích vyhovuje. Nevýhodou bývá menší výběr programů a to, že se na ně nedá nic postavit.
-    V katalogu na tomto webu je modelů s horním plněním jen několik, takže je najdete přímo
-    v přehledech <a href="<?= url('/pracky-whirlpool/') ?>">Whirlpool</a> a
-    <a href="<?= url('/pracky-beko/') ?>">Beko</a> spíše než v samostatném segmentu.
+    a lépe se kombinují s vestavbou nebo sušičkou nad pračkou. Pračky s horním plněním se nemusí
+    ohýbat při vkládání prádla a u řady modelů lze přidat kus prádla i za chodu. Nevýhodou bývá
+    menší výběr programů a to, že se na ně nedá nic postavit. Modely s horním plněním jsou navíc
+    v katalogu vždy úzké (40–41 cm) — podrobnosti v segmentech
+    <a href="<?= url('/pracky-s-hornim-plnenim/') ?>">Pračky s horním plněním</a> a
+    <a href="<?= url('/uzke-pracky/') ?>">Úzké pračky</a>.
   </p>
 
   <h2 id="rozmery">5. Rozměry: úzké a vestavné pračky</h2>
@@ -107,19 +107,18 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <h2 id="motor">6. Motor: invertorový, nebo standardní</h2>
   <p>
     Invertorový motor (u jednotlivých výrobců pod různými názvy — EcoSilence Drive u Bosch,
-    přímý pohon u LG, ProSmart u Beko) nemá uhlíkové kartáče, je tišší a výrobci na něj obvykle
-    dávají prodlouženou záruku (běžně 10 let). V recenzích zákazníků se invertorové motory
-    opakovaně zmiňují jako tišší a spolehlivější ve srovnání se standardními motory, které
-    najdete hlavně u nejlevnějších modelů.
+    přímý pohon u LG, EnergySpin u Beko) nemá uhlíkové kartáče, díky čemuž je konstrukčně tišší
+    a méně mechanicky namáhaný než klasický motor. Výrobci na něj obvykle dávají prodlouženou
+    záruku (běžně 10 let). Standardní (neinvertorové) motory najdete hlavně u nejlevnějších modelů.
   </p>
 
   <h2 id="wifi">7. Chytré funkce a Wi-Fi</h2>
   <p>
     Wi-Fi připojení umožňuje spustit program na dálku, sledovat zbývající čas nebo dostat
     upozornění na konci cyklu přes mobilní aplikaci výrobce (ThinQ u LG, SmartThings u Samsung).
-    Pro řadu domácností jde o příjemný bonus, ne nutnost — v recenzích se objevuje jak pozitivně
-    (pohodlí), tak negativně (nutnost registrace, občasné problémy s připojením). Zvažte, jestli
-    tuto funkci reálně využijete, protože modely s Wi-Fi bývají dražší.
+    Pro řadu domácností jde o příjemný bonus, ne nutnost — vyžaduje registraci v aplikaci
+    a připojení k domácí síti. Zvažte, jestli tuto funkci reálně využijete, protože modely
+    s Wi-Fi bývají dražší.
   </p>
 
   <h2 id="susicka">8. Pračka se sušičkou, nebo samostatná sušička</h2>
@@ -149,10 +148,10 @@ require_once dirname(__DIR__) . '/inc/header.php';
   <p>
     Jednotlivá hodnocení na e-shopech mají malou vypovídací hodnotu — spokojený i nespokojený
     zákazník má tendenci psát emotivněji, než odpovídá realitě. Užitečnější je sledovat vzorce
-    napříč desítkami až stovkami recenzí: co se opakuje, ne co napsal jeden člověk. Přesně tímto
-    způsobem vznikají sekce „Co říkají uživatelé" u jednotlivých produktů na tomto webu — jde
-    o agregaci, ne o převyprávění jednoho hodnocení. Podrobně to popisujeme v
-    <a href="<?= url('/metodika/') ?>">metodice</a>.
+    napříč desítkami až stovkami recenzí: co se opakuje, ne co napsal jeden člověk. Reálná
+    hodnocení od zákazníků k jednotlivým modelům na tomto webu zatím sbíráme — pokud některý
+    z produktů vlastníte, napište nám zkušenost na kontaktní e-mail u daného modelu. Jak s recenzemi
+    chceme pracovat, popisujeme v <a href="<?= url('/metodika/') ?>">metodice</a>.
   </p>
 
   <h2 id="shrnuti">Shrnutí: na co se ptát před nákupem</h2>
@@ -184,7 +183,7 @@ require_once dirname(__DIR__) . '/inc/header.php';
     ],
     [
       'q' => 'Vyplatí se invertorový motor?',
-      'a' => 'Pokud vám záleží na hlučnosti a delší záruce na motor (výrobci běžně nabízí 10 let), ano. V recenzích zákazníků se invertorové motory opakovaně zmiňují jako tišší volba.',
+      'a' => 'Pokud vám záleží na hlučnosti a delší záruce na motor (výrobci běžně nabízí 10 let), ano. Invertorový motor nemá uhlíkové kartáče, což ho konstrukčně předurčuje k tiššímu provozu než klasický motor.',
     ],
     [
       'q' => 'Má smysl kupovat pračku se sušičkou 2v1?',

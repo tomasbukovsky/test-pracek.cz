@@ -1,13 +1,13 @@
 <?php
 $segment_slug     = 'pracky-7-kg';
-$segment_h1       = 'Pračky 7 kg: srovnání a recenze 2026';
-$page_title       = 'Pračky 7 kg 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček s kapacitou 7 kg. Pro koho je 7 kg ideální? Srovnání parametrů z EPREL a recenzí zákazníků.';
+$segment_h1       = 'Pračky 7 kg: srovnání a parametry 2026';
+$page_title       = 'Pračky 7 kg 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček s kapacitou 7 kg. Pro koho je 7 kg ideální? Srovnání ověřených parametrů z registru EPREL.';
 
 $segment_intro = '
-<p>Pračka s kapacitou <strong>7 kg</strong> je vhodná pro domácnosti 1–3 osob nebo pro ty, kteří perou častěji a v menších dávkách. Sedmikilogové modely bývají mírně levnější než 8kg nebo 9kg alternativy a v menší koupelně mohou mít i nižší hloubku (např. LG F2WV3S7S3E s hloubkou 48 cm).</p>
-<p>Ve třídě 7 kg je nabídka nejširší — všechny hlavní značky (Bosch, LG, Samsung, Whirlpool, AEG, Beko) mají v tomto segmentu alespoň jeden model. Zákazníci si zde mohou vybírat od velmi dostupného Beka za ~7 000 Kč po prémiový AEG za ~12 000 Kč.</p>
-<p>Parametry, na které se zákazníci v recenzích zaměřují: <strong>hlučnost</strong> (rozsah v 7kg kategorii je 44–51 dB při praní), <strong>hloubka kabiny</strong> (45–64 cm — velký rozptyl) a <strong>energetická třída</strong> (A až C). Podrobné parametry z registru EPREL najdete v tabulce níže.</p>
+<p>Pračka s kapacitou <strong>7 kg</strong> je vhodná pro domácnosti 1–3 osob nebo pro ty, kteří perou častěji a v menších dávkách. Sedmikilové modely bývají mírně levnější než 8kg nebo 9kg alternativy a v menší koupelně mohou mít i nižší hloubku — Beko BM3WFSU47415WB má hloubku jen 50 cm.</p>
+<p>Ve třídě 7 kg je nabídka nejširší — v katalogu najdete modely od nejdostupnějšího Beka (od 8 490 Kč) po AEG 7000 ProSteam LTR7C373C, úzký model s horním plněním za 15 990 Kč.</p>
+<p>Podle ověřených dat z EPREL se hlučnost při praní v 7kg kategorii pohybuje mezi 70–79 dB a hloubka kabiny mezi 50–60 cm — u úzkých modelů s horním plněním počítejte spíš s hodnotami při horní hranici. Podrobné parametry z registru EPREL najdete v tabulce níže.</p>
 ';
 
 $faq_items = [

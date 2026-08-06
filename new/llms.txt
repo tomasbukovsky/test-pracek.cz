@@ -1,0 +1,48 @@
+# test-pracek.cz
+
+> Nezávislé srovnání praček podle ověřených technických parametrů z registru EPREL (Evropský registr energetických štítků) a výsledků nezávislých testů (dTest, Stiftung Warentest). Web sám pračky netestuje ani nepoužívá.
+
+test-pracek.cz je český srovnávací web zaměřený výhradně na pračky. Neprovozuje vlastní testovací laboratoř a nikdy netvrdí opak. Technické parametry (energetická třída, spotřeba energie a vody, hlučnost, třída odstřeďování, rozměry) přebírá výhradně z veřejného registru EPREL podle EAN kódu konkrétního modelu — pokud pro model záznam v EPREL chybí, web to na stránce produktu otevřeně uvádí, parametr neodhaduje. Ceny a dostupnost pocházejí z feedu partnerského e-shopu a jsou vždy označené jako orientační k datu zjištění.
+
+Reálná hodnocení od zákazníků web teprve sbírá (viz stránka Kontakt) — dokud jich pro daný model není dost, sekce u produktu to říká na rovinu místo aby předstírala agregaci recenzí, kterou nemá. Žebříčky (TOP 3, TOP 8) proto zatím řadí modely podle orientační ceny, ne podle skóre nebo obliby.
+
+Web se financuje z affiliate provizí za nákupy přes odkazy do partnerských e-shopů. Provize neovlivňuje pořadí modelů ani obsah popisů — podrobnosti viz Metodika a Informace o spolupráci níže.
+
+## Metodika a důvěryhodnost
+
+- [Metodika](https://www.test-pracek.cz/metodika/): Ze kterých zdrojů web čerpá, jak vzniká pořadí v žebříčcích, jak často se obsah aktualizuje a jak se web financuje.
+- [O nás](https://www.test-pracek.cz/o-nas/): Kdo web provozuje a proč vznikl.
+- [Kontakt](https://www.test-pracek.cz/kontakt/): Nahlášení chyby nebo nesrovnalosti v parametrech, zaslání reálné zkušenosti s konkrétním modelem.
+
+## Rádce pro výběr pračky
+
+- [Jak vybrat pračku](https://www.test-pracek.cz/jak-vybrat-pracku/): Kompletní průvodce — kapacita, energetická třída, otáčky, typ plnění, motor, Wi-Fi.
+- [Jaká kapacita pračky je vhodná](https://www.test-pracek.cz/jaka-kapacita-pracky/): Doporučená kapacita podle počtu osob v domácnosti.
+- [Energetické třídy praček vysvětlené](https://www.test-pracek.cz/energeticke-tridy-pracek/): Jak číst energetický štítek a stupnici A–G.
+- [Jak čistit pračku](https://www.test-pracek.cz/jak-cistit-pracku/): Údržba bubnu, těsnění, zásobníku a filtru.
+
+## Přehled podle značky
+
+- [Pračky LG](https://www.test-pracek.cz/pracky-lg/)
+- [Pračky Bosch](https://www.test-pracek.cz/pracky-bosch/)
+- [Pračky Samsung](https://www.test-pracek.cz/pracky-samsung/)
+- [Pračky Whirlpool](https://www.test-pracek.cz/pracky-whirlpool/)
+- [Pračky AEG](https://www.test-pracek.cz/pracky-aeg/)
+- [Pračky Beko](https://www.test-pracek.cz/pracky-beko/)
+
+## Přehled podle typu a kapacity
+
+- [Pračky 7 kg](https://www.test-pracek.cz/pracky-7-kg/)
+- [Pračky 8 kg](https://www.test-pracek.cz/pracky-8-kg/)
+- [Pračky 9 kg](https://www.test-pracek.cz/pracky-9-kg/)
+- [Pračky 10 kg](https://www.test-pracek.cz/pracky-10-kg/)
+- [Úzké pračky (40–45 cm)](https://www.test-pracek.cz/uzke-pracky/): Včetně modelů s horním plněním.
+- [Vestavné pračky](https://www.test-pracek.cz/vestavne-pracky/)
+- [Pračky s předním plněním](https://www.test-pracek.cz/pracky-s-prednim-plnenim/)
+- [Pračky se sušičkou](https://www.test-pracek.cz/pracky-se-susickou/): Kombinované modely 2v1.
+
+## Optional
+
+- [Informace o spolupráci](https://www.test-pracek.cz/affiliate-informace/): Jak fungují affiliate odkazy na partnerské e-shopy a proč neovlivňují hodnocení.
+- [Ochrana osobních údajů](https://www.test-pracek.cz/ochrana-osobnich-udaju/): Zpracování osobních údajů, cookies, Google Analytics 4.
+- [Sitemap](https://www.test-pracek.cz/sitemap.xml): Úplný seznam URL včetně jednotlivých produktových stránek.

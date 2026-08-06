@@ -1,13 +1,13 @@
 <?php
 $segment_slug     = 'pracky-9-kg';
-$segment_h1       = 'Pračky 9 kg: srovnání a recenze 2026';
-$page_title       = 'Pračky 9 kg 2026: srovnání modelů, recenze a parametry';
-$page_description = 'Přehled praček s kapacitou 9 kg pro větší domácnosti. Srovnání parametrů z EPREL a recenzí zákazníků z Alzy a Heureky.';
+$segment_h1       = 'Pračky 9 kg: srovnání a parametry 2026';
+$page_title       = 'Pračky 9 kg 2026: srovnání modelů a parametry';
+$page_description = 'Přehled praček s kapacitou 9 kg pro větší domácnosti. Srovnání ověřených parametrů z registru EPREL.';
 
 $segment_intro = '
-<p>Pračky s kapacitou <strong>9 kg</strong> jsou vhodné pro velké rodiny (4–5 osob) nebo domácnosti, kde se pere hodně textilu najednou — sportovní vybavení, ložní prádlo, dětské oblečení. Devítikilogový buben je asi o 30 % větší než 7kg, ale cena bývá jen o ~1 000–2 000 Kč vyšší.</p>
-<p>V hodnoceních zákazníků, kde se porovnává 8 a 9 kg, zákazníci zpětně chválí, že zvolili větší kapacitu — méně praní týdně znamená nižší celkové provozní náklady. Argument „velká pračka spotřebuje více vody" je v recenzích zpochybňován: moderní pračky dávkují vodu podle náplně.</p>
-<p>Třída 9 kg zahrnuje šest modelů od pěti značek — od nejdostupnějšího Beka (cca 9 000 Kč) po prémiový AEG L9WEC163C s třídou A a otáčkami 1 600 ot./min (18 000 Kč). Parametry z registru EPREL jsou v tabulce.</p>
+<p>Pračky s kapacitou <strong>9 kg</strong> jsou vhodné pro velké rodiny (4–5 osob) nebo domácnosti, kde se pere hodně textilu najednou — sportovní vybavení, ložní prádlo, dětské oblečení.</p>
+<p>Moderní pračky dávkují vodu podle skutečné náplně, ne podle maximální kapacity — praní menší dávky v 9kg pračce tak zbytečně nezvyšuje spotřebu vody oproti menšímu bubnu.</p>
+<p>Třída 9 kg je v katalogu jedna z nejširších — najdete tu deset modelů od pěti značek, od nejdostupnějšího Beka (od 8 499 Kč) po Bosch WGG244Z3BY Serie 6 (15 990 Kč). Podle ověřených dat z EPREL se hlučnost při praní pohybuje mezi 71–75 dB a hloubka kabiny mezi 48–64 cm — trojice modelů LG (FLR5A92WS, FLR7A92WG, FLR9A92WC) má nejmělčí provedení (48 cm), Bosch WGG244Z3BY naopak nejhlubší (64 cm). Parametry z registru EPREL jsou v tabulce.</p>
 ';
 
 $faq_items = [
@@ -20,8 +20,8 @@ $faq_items = [
     'a' => 'Maximální spotřeba (plná náplň) je mírně vyšší. Ale moderní pračky dávkují vodu podle skutečné náplně — při praní 4 kg prádla v 9kg pračce spotřebuje podobně jako 7kg model se stejnou náplní. Celková roční spotřeba závisí hlavně na tom, jak plně pračku plníte.',
   ],
   [
-    'q' => 'Proč má Beko 9 kg jen 1 000 ot./min?',
-    'a' => 'Model Beko B3WFR59023PW má nižší otáčky jako cenový kompromis. Při 1 000 ot./min je prádlo po vyprání mokřejší, což prodlužuje sušení. Je to faktická nevýhoda, kterou je potřeba zohlednit při rozhodování — ale cena modelu je výrazně nižší než srovnatelné 9kg modely s 1 400 ot./min.',
+    'q' => 'Mají všechny 9kg pračky v katalogu stejné otáčky?',
+    'a' => 'Ne — otáčky při odstřeďování se u 9kg modelů v katalogu liší od 1160 do 1400 ot./min. Nižší otáčky znamenají mokřejší prádlo po vyprání a delší sušení, bývají ale spojené s nižší cenou. Konkrétní hodnotu najdete u každého modelu v tabulce.',
   ],
 ];
 

@@ -21,10 +21,11 @@ foreach (serad_produkty(array_values($vsechny), 'cena_orient', 'asc') as $p) {
 }
 $top = array_slice($top, 0, 8);
 
-$page_title       = 'Test praček 2026: srovnání nejprodávanějších modelů | test-pracek.cz';
-$page_description = 'Nezávislý přehled testů a uživatelských recenzí praček. Vychází z výsledků dTestu, Stiftung Warentest a stovek hodnocení na Alze a Heurece. Žádné vlastní testování – jen poctivá agregace.';
+$page_title       = 'Test praček 2026: srovnání modelů | test-pracek.cz';
+$page_description = 'Nezávislé srovnání praček podle ověřených parametrů z EPREL a výsledků testů dTest a Stiftung Warentest. Žádné vlastní testování ani vymyšlené recenze.';
 $page_canonical   = SITE_URL . '/';
-$page_og_image    = SITE_URL . '/assets/img/og-homepage.jpg';
+// Vlastní OG obrázek homepage nemáme vyrobený - použijeme fotku prvního produktu v žebříčku.
+$page_og_image    = !empty($top) ? $top[0]['obrazek'] : SITE_URL . '/assets/img/logo.png';
 $schema_json      = schema_itemlist($top);
 
 require_once __DIR__ . '/inc/head.php';
@@ -41,11 +42,10 @@ require_once __DIR__ . '/inc/header.php';
   <section class="pilir-intro" aria-labelledby="pilir-h1">
     <h1 id="pilir-h1">Test praček 2026</h1>
     <p>
-      Na tomto webu <strong>nenajdete vlastní laboratorní testy</strong>. Najdete ale to, co je možná
-      cennější: souhrn stovek recenzí a výsledků nezávislých testů na jednom místě.
-      Procházíme hodnocení zákazníků na Alze a Heurece, sledujeme výsledky dTestu
-      a německého Stiftung Warentest a z opakujících se vzorců sestavujeme přehled
-      toho, co jednotlivé pračky skutečně umí — a co naopak uživatele zklamalo.
+      Na tomto webu <strong>nenajdete vlastní laboratorní testy</strong>. Sledujeme výsledky
+      nezávislých testů (dTest, německý Stiftung Warentest) a sbíráme reálné zkušenosti od
+      zákazníků, kteří nám je pošlou — dokud jich pro daný model není dost, píšeme to na
+      stránce produktu otevřeně, místo abychom předstírali recenze, které nemáme.
     </p>
     <p>
       Parametry jako energetická třída, spotřeba vody nebo hlučnost přebíráme výhradně
@@ -54,11 +54,11 @@ require_once __DIR__ . '/inc/header.php';
       stránku zkrátíme — nevymýšlíme.
     </p>
     <p>
-      Výběr modelů v žebříčku vychází z prodejnosti a dostupnosti na českém trhu.
-      Pořadí neovlivňuje provize z prodeje — vydělávat začneme až tehdy, když vám
-      doporučíme pračku, se kterou budete spokojeni. Nakoupit pak můžete v partnerských,
-      prověřených e-shopech. Jak přesně vzniká naše hodnocení
-      vysvětluje <a href="<?= url('/metodika/') ?>">stránka Metodika</a>.
+      Výběr modelů v žebříčku vychází z orientační ceny — dokud nemáme dost reálných recenzí
+      na poctivé řazení podle obliby, je cena jediné transparentní kritérium. Pořadí neovlivňuje
+      provize z prodeje — vydělávat začneme až tehdy, když vám doporučíme pračku, se kterou
+      budete spokojeni. Nakoupit pak můžete v partnerských, prověřených e-shopech. Jak přesně
+      vzniká naše hodnocení vysvětluje <a href="<?= url('/metodika/') ?>">stránka Metodika</a>.
     </p>
   </section>
 
@@ -104,14 +104,11 @@ require_once __DIR__ . '/inc/header.php';
           <p><?= htmlspecialchars($p['recenze_shrnuti'], ENT_QUOTES, 'UTF-8') ?></p>
           <?php if (!empty($p['recenze_pocet']) && $p['recenze_pocet'] > 0): ?>
           <p class="text-muted"><small>Zdroj: agregace <?= (int)$p['recenze_pocet'] ?> hodnocení ze zdrojů: <?= htmlspecialchars(implode(', ', $p['recenze_zdroje']), ENT_QUOTES, 'UTF-8') ?>.</small></p>
-          <?php else: ?>
-          <p class="text-muted"><small>Zdroj: hodnocení zákazníků ze zdrojů: <?= htmlspecialchars(implode(', ', $p['recenze_zdroje']), ENT_QUOTES, 'UTF-8') ?>.</small></p>
           <?php endif; ?>
           <p>
             <a href="<?= url('/' . htmlspecialchars($p['slug'], ENT_QUOTES, 'UTF-8') . '/') ?>" class="btn btn--secondary">Celá recenze →</a>
             <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary">Koupit</a>
           </p>
-          <p class="text-muted"><small><a href="<?= url('/affiliate-informace/') ?>">Partnerský odkaz</a> — nákupem podpoříte web bez příplatku.</small></p>
         </div>
       </div>
     </article>
@@ -130,7 +127,6 @@ require_once __DIR__ . '/inc/header.php';
       <li><a href="<?= url('/pracky-whirlpool/') ?>">Pračky Whirlpool</a></li>
       <li><a href="<?= url('/pracky-aeg/') ?>">Pračky AEG</a></li>
       <li><a href="<?= url('/pracky-beko/') ?>">Pračky Beko</a></li>
-      <li><a href="<?= url('/pracky-electrolux/') ?>">Pračky Electrolux</a></li>
       <li><a href="<?= url('/pracky-8-kg/') ?>">Pračky 8 kg</a></li>
       <li><a href="<?= url('/pracky-9-kg/') ?>">Pračky 9 kg</a></li>
       <li><a href="<?= url('/pracky-7-kg/') ?>">Pračky 7 kg</a></li>
@@ -177,7 +173,7 @@ require_once __DIR__ . '/inc/header.php';
     ],
     [
       'q' => 'Jsou pračky na tomto webu skutečně otestovány?',
-      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah je agregací uživatelských recenzí z Alzy a Heureky a výsledků nezávislých testů (dTest, Stiftung Warentest). Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="' . url('/metodika/') . '">metodice</a>.',
+      'a' => '<strong>Ne.</strong> Žádný z hodnocených modelů jsme osobně netestovali ani nepoužívali. Obsah vychází z ověřených technických parametrů (EPREL) a výsledků nezávislých testů (dTest, Stiftung Warentest), kde existují. Reálná hodnocení od zákazníků teprve sbíráme. Tuto skutečnost uvádíme otevřeně, protože považujeme transparentnost za základ důvěry. Více v <a href="' . url('/metodika/') . '">metodice</a>.',
     ],
     [
       'q' => 'Proč na webu nejsou aktuální ceny?',
