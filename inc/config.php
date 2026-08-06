@@ -3,11 +3,11 @@ define('SITE_NAME', 'test-pracek.cz');
 define('SITE_URL', 'https://www.test-pracek.cz');
 
 // Cesta, na které web aktuálně běží (pro interní odkazy a assety).
-// Testovací provoz na www.test-pracek.cz/new/ → '/new'
-// Po ostrém nasazení do kořene domény → '' (prázdný řetězec)
-define('BASE_PATH', '/new');
+// Ostrý provoz v kořeni domény → '' (prázdný řetězec)
+define('BASE_PATH', '');
 
-// Dokud web běží na testovací cestě (BASE_PATH), nechceme ho v indexu vyhledávačů.
+// Dokud web běžel na testovací cestě (BASE_PATH), byl v indexu vyhledávačů zakázaný.
+// Po ostrém nasazení (BASE_PATH === '') je NOINDEX automaticky vypnutý.
 define('NOINDEX', BASE_PATH !== '');
 
 define('GA4_ID', 'G-7KH3EPBX3C');

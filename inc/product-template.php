@@ -18,6 +18,9 @@ $page_title       = $p['nazev'] . ': technické parametry a cena';
 $page_description = 'Ověřené parametry pračky ' . $p['nazev'] . ' z registru EPREL — kapacita, energetická třída, hlučnost. Klady, zápory a srovnání s podobnými modely.';
 $page_canonical   = SITE_URL . '/' . $p['slug'] . '/';
 $page_og_image    = $p['obrazek'];
+// Hlavní produktová fotka je na téhle stránce jednoznačně LCP prvek (velký eager obrázek
+// hned nahoře) - preload z head.php zkrátí čas do jeho vykreslení.
+$page_lcp_image   = $p['obrazek'];
 
 $breadcrumb_cesta = [['url' => '/', 'nazev' => 'Test praček 2026']];
 if ($breadcrumb_segment) {
@@ -64,6 +67,7 @@ $alternativy = produkt_alternativy($p, 2);
         alt="Pračka <?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
         width="280" height="280"
         loading="eager"
+        fetchpriority="high"
       >
     </div>
     <div class="product-detail__intro">

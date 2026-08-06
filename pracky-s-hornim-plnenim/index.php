@@ -1,4 +1,7 @@
 <?php
+require_once dirname(__DIR__) . '/inc/config.php';
+require_once dirname(__DIR__) . '/inc/functions.php';
+
 $segment_slug     = 'pracky-s-hornim-plnenim';
 $segment_h1       = 'Pračky s horním plněním: srovnání 2026';
 $page_title       = 'Pračky s horním plněním 2026: srovnání a parametry';

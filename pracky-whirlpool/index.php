@@ -1,4 +1,7 @@
 <?php
+require_once dirname(__DIR__) . '/inc/config.php';
+require_once dirname(__DIR__) . '/inc/functions.php';
+
 $segment_slug     = 'pracky-whirlpool';
 $segment_h1       = 'Pračky Whirlpool: srovnání a parametry 2026';
 $page_title       = 'Pračky Whirlpool 2026: srovnání modelů a parametry';

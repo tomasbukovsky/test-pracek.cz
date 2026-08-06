@@ -1,4 +1,7 @@
 <?php
+require_once dirname(__DIR__) . '/inc/config.php';
+require_once dirname(__DIR__) . '/inc/functions.php';
+
 $segment_slug     = 'uzke-pracky';
 $segment_h1       = 'Úzké pračky (40–45 cm): srovnání 2026';
 $page_title       = 'Úzká pračka 2026: srovnání modelů 40 a 45 cm';

@@ -3,9 +3,8 @@
  * Generuje sitemap.xml z dat webu. Volá se přes rewrite pravidlo v .htaccess
  * (sitemap.xml -> sitemap.php), aby URL zůstala bez přípony .php.
  *
- * Obsahuje vždy finální produkční URL (SITE_URL), bez ohledu na to, jestli web
- * aktuálně běží testovací na /new/ — do sitemapy nepatří žádná přesměrovaná
- * ani noindexovaná cesta.
+ * Obsahuje vždy finální produkční URL (SITE_URL) — do sitemapy nepatří žádná
+ * přesměrovaná ani noindexovaná cesta.
  */
 require_once __DIR__ . '/inc/config.php';
 require_once __DIR__ . '/inc/functions.php';

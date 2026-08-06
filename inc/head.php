@@ -6,6 +6,10 @@
  *   $page_description – meta description (do 155 znaků)
  *   $page_canonical   – kanonická URL (absolutní)
  *   $page_og_image    – URL OG obrázku (volitelné)
+ *   $page_lcp_image   – URL obrázku, který je na stránce LCP prvkem (volitelné) –
+ *                        stejná URL, jakou má <img loading="eager"> níže na stránce.
+ *                        Použije se pro rel="preload", ať prohlížeč stihne obrázek
+ *                        z cizí CDN začít stahovat co nejdřív.
  *   $schema_json      – string(y) JSON-LD (volitelné)
  */
 ?>
@@ -15,6 +19,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0f5257">
+
+<!-- Produktové fotky táhneme z CDN Alzy - preconnect zkrátí čas do prvního bajtu
+     LCP obrázku o čas na DNS/TCP/TLS handshake. -->
+<link rel="preconnect" href="https://cdn.alza.cz">
+<link rel="dns-prefetch" href="https://cdn.alza.cz">
+<?php if (!empty($page_lcp_image)): ?>
+<link rel="preload" as="image" fetchpriority="high" href="<?= htmlspecialchars($page_lcp_image, ENT_QUOTES, 'UTF-8') ?>">
+<?php endif; ?>
 
 <link rel="icon" href="<?= url('/assets/img/icon.svg') ?>" type="image/svg+xml">
 <link rel="icon" href="<?= url('/assets/img/favicon-32.png') ?>" type="image/png" sizes="32x32">
@@ -70,6 +82,7 @@
 
 <!-- Critical CSS inline -->
 <style>
+html{scrollbar-gutter:stable}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1rem;line-height:1.7;color:#221f1a;background:#fbfaf7}
 a{color:#0f5257;text-decoration:underline}
@@ -78,6 +91,5 @@ img{max-width:100%;height:auto;display:block}
 .container{width:100%;max-width:1120px;margin:0 auto;padding:0 1.25rem}
 h1,h2,h3{line-height:1.2;margin-top:0;font-family:ui-serif,Georgia,"Times New Roman",serif}
 </style>
-<link rel="stylesheet" href="<?= url('/assets/style.css') ?>" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="<?= url('/assets/style.css') ?>"></noscript>
+<link rel="stylesheet" href="<?= url('/assets/style.css') ?>">
 </head>

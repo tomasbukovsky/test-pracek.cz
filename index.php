@@ -26,6 +26,9 @@ $page_description = 'Nezávislé srovnání praček podle ověřených parametr�
 $page_canonical   = SITE_URL . '/';
 // Vlastní OG obrázek homepage nemáme vyrobený - použijeme fotku prvního produktu v žebříčku.
 $page_og_image    = !empty($top) ? $top[0]['obrazek'] : SITE_URL . '/assets/img/logo.png';
+// Stejný obrázek je na stránce vykreslený s loading="eager" jako první v pořadí - je to
+// pravděpodobně LCP prvek stránky, tak ho necháme prohlížeči začít stahovat co nejdřív.
+$page_lcp_image   = !empty($top) ? $top[0]['obrazek'] : null;
 $schema_json      = schema_itemlist($top);
 
 require_once __DIR__ . '/inc/head.php';
@@ -95,6 +98,7 @@ require_once __DIR__ . '/inc/header.php';
             alt="<?= htmlspecialchars($p['nazev'], ENT_QUOTES, 'UTF-8') ?>"
             width="200" height="200"
             loading="<?= $i === 0 ? 'eager' : 'lazy' ?>"
+            <?= $i === 0 ? 'fetchpriority="high"' : '' ?>
           >
         </a>
         <div class="produkt-blok__text">
@@ -201,8 +205,8 @@ echo '<style>
 .produkt-blok { border-bottom: 1px solid var(--color-border); padding: 2rem 0; }
 .produkt-blok:last-child { border-bottom: none; }
 .produkt-blok__inner { display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap; }
-.produkt-blok__img { width: 180px; flex-shrink: 0; }
-.produkt-blok__img img { border-radius: var(--radius); background: var(--color-bg-alt); padding: .5rem; }
+.produkt-blok__img { width: 180px; aspect-ratio: 1; flex-shrink: 0; padding: .5rem; border-radius: var(--radius); background: var(--color-bg-alt); }
+.produkt-blok__img img { width: 100%; height: 100%; object-fit: contain; }
 .produkt-blok__text { flex: 1; min-width: 220px; }
 .segmenty-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .5rem; list-style: none; padding: 0; margin: 1rem 0; }
 .segmenty-grid a { display: block; padding: .6rem 1rem; background: var(--color-bg-alt); border-radius: var(--radius); text-decoration: none; font-weight: 500; }

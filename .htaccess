@@ -15,14 +15,23 @@ RewriteRule ^sitemap\.xml$ sitemap.php [L]
 # ---------------------------------------------------------------
 # 3) Přesměrování starých ročníkových URL na nový web (viz zadání 4.4)
 #    Specifická pravidla VŽDY před obecným pravidlem níže.
+#    Používáme RewriteRule (ne RedirectMatch z mod_alias) - míchání mod_alias
+#    a mod_rewrite ve stejném .htaccess bývá nespolehlivé (pořadí vyhodnocení
+#    mezi moduly není garantované), zatímco RewriteRule běží ve stejném
+#    mod_rewrite kontextu jako pravidlo č. 1 výše.
 # ---------------------------------------------------------------
 
 # Podstránky ročníků (pokud by nějaké existovaly) — tematicky na odpovídající segment
 # Příklad (odkomentovat a upravit, pokud se najde konkrétní stará URL):
-# RedirectMatch 301 ^/20[0-9]{2}/pracky-s-hornim-plnenim.*$ /pracky-s-hornim-plnenim/
+# RewriteRule ^20[0-9]{2}/pracky-s-hornim-plnenim.*$ /pracky-s-hornim-plnenim/ [R=301,L]
 
 # Kořeny ročníků /2013/ až /2022/ (a jakékoli budoucí) -> homepage, jeden skok
-RedirectMatch 301 ^/20[0-9]{2}/?$ /
+RewriteRule ^20[0-9]{2}/?$ / [R=301,L]
+
+# ---------------------------------------------------------------
+# 3b) Neexistující URL -> vlastní 404 šablona (místo výchozí stránky hostingu)
+# ---------------------------------------------------------------
+ErrorDocument 404 /404.php
 
 # ---------------------------------------------------------------
 # 4) Bezpečnostní hlavičky a výkon (volitelné, ale nic nekazí)
