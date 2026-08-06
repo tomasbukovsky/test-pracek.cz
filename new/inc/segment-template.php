@@ -55,14 +55,14 @@ $top3 = array_slice($produkty_segmentu, 0, 3);
     <p><small>Metodika výběru a hodnocení: <a href="<?= url('/metodika/') ?>">Jak pracujeme s daty →</a></small></p>
   </div>
 
-  <?php require_once dirname(__DIR__) . '/inc/components/disclosure.php'; ?>
-
   <!-- Srovnávací tabulka všech produktů v segmentu -->
   <section aria-labelledby="tabulka-heading">
     <h2 id="tabulka-heading">Přehled <?= htmlspecialchars(mb_strtolower($segment_h1), ENT_QUOTES, 'UTF-8') ?></h2>
     <p class="text-muted">Seřazeno podle orientační ceny. Parametry z EPREL a feedu prodejce. Ceny jsou orientační.</p>
     <?php require dirname(__DIR__) . '/inc/components/product-table.php'; ?>
   </section>
+
+  <?php require_once dirname(__DIR__) . '/inc/components/disclosure.php'; ?>
 
   <!-- TOP 3 -->
   <section aria-labelledby="top3-heading">

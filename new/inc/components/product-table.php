@@ -36,7 +36,7 @@
         <?php endif; ?>
       </td>
       <td>
-        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--sm">Koupit</a>
+        <a href="<?= htmlspecialchars($p['alza_url'], ENT_QUOTES, 'UTF-8') ?>" rel="sponsored nofollow noopener" target="_blank" class="btn btn--primary btn--sm">Koupit</a>
       </td>
     </tr>
     <?php endforeach; ?>

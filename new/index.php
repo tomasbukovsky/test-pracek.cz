@@ -62,8 +62,6 @@ require_once __DIR__ . '/inc/header.php';
     </p>
   </section>
 
-  <?php require_once __DIR__ . '/inc/components/disclosure.php'; ?>
-
   <!-- ================================================================
        SROVNÁVACÍ TABULKA TOP MODELŮ
        ================================================================ -->
@@ -75,6 +73,8 @@ require_once __DIR__ . '/inc/header.php';
     require __DIR__ . '/inc/components/product-table.php';
     ?>
   </section>
+
+  <?php require_once __DIR__ . '/inc/components/disclosure.php'; ?>
 
   <!-- ================================================================
        BLOK KE KAŽDÉMU PRODUKTU
