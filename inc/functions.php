@@ -67,6 +67,20 @@ function schema_product(array $p): string {
     if (!empty($p['ean'])) {
         $schema['gtin13'] = $p['ean'];
     }
+    // offers - Google vyžaduje u Product buď offers, review, nebo aggregateRating.
+    // Recenze/hodnocení nefabrikujeme (nemáme je), takže jde jediná poctivá cesta: orientační
+    // cena je reálný údaj z podkladů, platnost omezujeme na 30 dní od data zjištění.
+    if (!empty($p['cena_orient']) && !empty($p['alza_url'])) {
+        $schema['offers'] = [
+            '@type'         => 'Offer',
+            'url'           => $p['alza_url'],
+            'priceCurrency' => 'CZK',
+            'price'         => $p['cena_orient'],
+        ];
+        if (!empty($p['cena_datum'])) {
+            $schema['offers']['priceValidUntil'] = date('Y-m-d', strtotime($p['cena_datum'] . ' +30 days'));
+        }
+    }
     return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
 }
 
